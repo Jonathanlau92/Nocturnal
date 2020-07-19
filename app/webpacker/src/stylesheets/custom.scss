@@ -1,27 +1,84 @@
-.container-image {
-  background-image: url('../src/images/Missions');
-  background-size:cover;
-  background-repeat:no-repeat;
-  height: 1000px;
-}
-
-* {
-  font-family: "Montserrat";
-  font-weight: 200 !important;
+body {
+  font-family: "Raleway";
   color: white;
   line-height: 1.5 !important;
- }
+  letter-spacing: 2px;
+}
 
- .heading {
-   font-weight: 800 !important;
-   font-size: 3.3rem;
-   color: #FDDC56;
- }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat";
+}
 
- .bold {
-   font-weight: 600 !important;
- }
+.heading {
+  font-weight: 900 !important;
+  font-size: 3.3rem;
+  color: white;
+}
 
- .text-yellow {
+.raleway-light {
+  font-weight: 100 !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.text-yellow {
   color: #FDDC56;
- }
+}
+
+.nav-width {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.logo-size {
+  width: 140px;
+}
+
+.background-img {
+  background-size:cover;
+  background-repeat:no-repeat;
+  height: 600px;
+  background-image: url('../src/images/1 Wallpaper.jpg');
+  background-attachment: fixed;
+}
+
+.background-img-2 {
+  height: 810px;
+  background-size:cover;
+  background-position: center;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/Dire Ancient.jpg');
+  transition: all 1s;
+}
+
+.background-img-2:hover {
+  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../src/images/Dire Ancient.jpg');
+  transform: scale(1.01);
+}
+
+.background-img-3 {
+  background-size:cover;
+  background-position: center;
+  background-repeat:no-repeat;
+  height: 810px;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/Radiant Ancient.jpg');
+  transition: all 1s;
+}
+
+.background-img-3:hover {
+  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../src/images/Radiant Ancient.jpg');
+  transform: scale(1.01);
+}
+
+
+.btn-nocturnal {
+  border-radius: 30px;
+  font-size: 0.9rem;
+  padding: 0.6rem 5rem;
+  color: black;
+  font-weight: 600 !important;
+  background-color: #FDDC56;
+  font-family: "Montserrat";
+}
