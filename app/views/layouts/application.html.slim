@@ -8,10 +8,10 @@ html
     = stylesheet_pack_tag 'stylesheets'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900'
+    = stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900'
   body
-    .container-image
-      = render 'layouts/header'
-      .container-fluid
-        = render 'layouts/messages'
-        = yield
-        = render 'layouts/footer'
+    = render 'layouts/header'
+    .container-fluid.px-0
+      = render 'layouts/messages'
+      = yield
+      = render 'layouts/footer'
