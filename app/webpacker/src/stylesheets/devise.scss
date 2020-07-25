@@ -26,6 +26,10 @@
   color: #468847;
   text-align: left;
  }
+// Font size
+.devise-font-size {
+  font-size: 10px;
+}
 // Background for devise sign in and sign up page
 #registration-background {
   background-image: url('../src/images/Registration');
@@ -72,5 +76,5 @@ select.form-control:focus {
 }
 
 .nocturnal-devise-logo {
-  width: 100%;
+  width: 80%;
 }
