@@ -1,24 +1,26 @@
 .container-fluid#registration-background
   .row.align-items-center.justify-content-left.h-100
-    .col-sm-4.form-wrapper
-      h2.text-center Sign up
+    .col-sm-3.p-3.form-wrapper
+      .text-center = image_pack_tag 'media/src/images/Logo.png', class: "nocturnal-devise-logo"
+      span.text-center.ml-5 Welcome to NOCTURNAL
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
+        br
         .field
-          = f.label :email
+          = f.label :username, 'USERNAME',  class: 'm-0'
           br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-sm-12'
-        .field
-          = f.label :password
-          - if @minimum_password_length
-            em
-              | (#{@minimum_password_length} characters minimum)
+          = f.text_field :username, class: 'text-white form-control col-sm-12'
+        .field.mt-3
+          = f.label :email, 'EMAIL', class: 'm-0'
           br/
-          = f.password_field :password, autocomplete: "new-password", class: 'form-control col-sm-12'
-        .field
-          = f.label :password_confirmation
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-white form-control col-sm-12'
+        .field.mt-3
+          = f.label :password, 'PASSWORD', class: 'm-0'
+          = f.password_field :password, autocomplete: "new-password", class: 'text-white form-control col-sm-12'
+        .field.mt-3
+          = f.label :password_confirmation, 'CONFIRM PASSWORD', class: 'm-0'
           br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control col-sm-12'
-        .actions
-          = f.submit "Sign up", class: 'mt-3 btn btn-warning'
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text-white form-control col-sm-12'
+        .actions.mt-3
+          = f.submit "Sign up", class: 'col-sm-12 mt-3 btn btn-warning rounded-pill'
       = render "devise/shared/links"
