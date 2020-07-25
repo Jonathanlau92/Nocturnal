@@ -78,3 +78,22 @@ select.form-control:focus {
 .nocturnal-devise-logo {
   width: 80%;
 }
+
+// Login page where it divides the line to login with steam
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.separator::before, .separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid white;
+}
+.separator::before {
+  margin-right: .25em;
+}
+.separator::after {
+  margin-left: .25em;
+}
