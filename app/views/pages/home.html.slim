@@ -5,8 +5,11 @@ div.background-img.d-flex.flex-wrap.align-content-center.justify-content-center
 			| Welcome to 
 			span.text-yellow.bold NOCTURNAL
 			| . We are an eSports organizer designed to give highly ambitious individuals a chance to participate in the competitive scene within Southeast Asia.
-		= link_to "KAEL.66", root_path, class: "btn btn-nocturnal"
-		p.small.raleway-light Welcome back, Champion
+		- if user_signed_in?
+			= link_to current_user.username, root_path, class: "btn btn-nocturnal"
+		- else
+			= link_to 'Sign in now!', new_user_session_path, class: "btn btn-nocturnal"
+		p.small.raleway-light.mt-1 Welcome back, Champion
 div.background-img-2.d-flex.flex-wrap.align-content-center.justify-content-center
 	.text-center
 		h3 MONTHLY

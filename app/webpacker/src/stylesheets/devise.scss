@@ -30,9 +30,14 @@
 .devise-font-size {
   font-size: 10px;
 }
+
+#error_explanation {
+  font-size: 10px;
+}
 // Background for devise sign in and sign up page
 #registration-background {
   background-image: url('../src/images/Registration');
+  overflow: visible;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -73,6 +78,7 @@ select.form-control:focus {
 .form-wrapper {
   padding: 0 100px;
   background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
 }
 
 .nocturnal-devise-logo {
