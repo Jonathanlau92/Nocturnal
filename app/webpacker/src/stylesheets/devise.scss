@@ -26,14 +26,23 @@
   color: #468847;
   text-align: left;
  }
-
-#registration-background{
+// Background for devise sign in and sign up page
+#registration-background {
   background-image: url('../src/images/Registration');
   background-size: cover;
   background-repeat: no-repeat;
   height: 92%;
 }
 
-.form-wrapper{
+#login-background {
+  background-image: url('../src/images/Sign in');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 92%;
+}
+
+
+.form-wrapper {
   margin-left: 10%;
 }
