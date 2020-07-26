@@ -1,11 +1,19 @@
 body {
   font-family: "Raleway";
   color: white;
-  line-height: 1.5 !important;
   letter-spacing: 2px;
+  font-size: 0.8rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, div {
+  line-height: 28px;
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6, p {
+  text-shadow: -1px 1px 2px black;
+}
+
+.montserrat {
   font-family: "Montserrat";
 }
 
@@ -13,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900 !important;
   font-size: 3.3rem;
   color: white;
+  font-family: "Montserrat";
 }
 
 .raleway-light {
@@ -44,41 +53,42 @@ h1, h2, h3, h4, h5, h6 {
   background-attachment: fixed;
 }
 
+.background-img-1 {
+  height: 1400px;
+  background-size:contain;
+  background-position: center top;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/Compiled Wallpaper.jpg');
+  background-color: black;
+  transition: all 1s;
+}
+
 .background-img-2 {
-  height: 810px;
   background-size:cover;
   background-position: center;
   background-repeat:no-repeat;
-  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/Dire Ancient.jpg');
+  height: 710px;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/3 Wallpaper.jpg');
   transition: all 1s;
 }
-
-.background-img-2:hover {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../src/images/Dire Ancient.jpg');
-  transform: scale(1.01);
-}
-
-.background-img-3 {
-  background-size:cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  height: 810px;
-  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../src/images/Radiant Ancient.jpg');
-  transition: all 1s;
-}
-
-.background-img-3:hover {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../src/images/Radiant Ancient.jpg');
-  transform: scale(1.01);
-}
-
 
 .btn-nocturnal {
   border-radius: 30px;
   font-size: 0.9rem;
   padding: 0.6rem 5rem;
   color: black;
-  font-weight: 600 !important;
   background-color: #FDDC56;
   font-family: "Montserrat";
+}
+
+.line-height-sm {
+  line-height: 1 !important;
+}
+
+.text-glow-white {
+  text-shadow: 0px 0px 5px #FDDC56;
+}
+
+.text-glow-yellow {
+  text-shadow: -1px 1px 6px black, 0px 0px 10px #FDDC56, 0px 0px 15px #FDDC56, 0px 0px 20px #FDDC56;
 }
