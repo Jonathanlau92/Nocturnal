@@ -6,8 +6,8 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width
     li.nav-item
       = link_to "Home", root_path, class: "nav-link"
     li.nav-item
-      = link_to "Leagues", root_path, class: "nav-link"
+      = link_to "Leagues", root_path(anchor: "leagues"), class: "nav-link"
     li.nav-item
-      = link_to "Requirements", root_path, class: "nav-link"
+      = link_to "Requirements", root_path(anchor: "requirements"), class: "nav-link"
     li.nav-item
       = link_to "More", root_path, class: "nav-link"
