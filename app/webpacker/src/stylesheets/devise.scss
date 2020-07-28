@@ -46,9 +46,10 @@
 #login-background {
   background-image: url('../src/images/Sign in');
   background-position: center;
+  overflow: visible;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 92%;
+  height: 100%;
 }
 
 
