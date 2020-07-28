@@ -33,6 +33,8 @@ gem "slim-rails"
 
 # For login authentication
 gem 'devise'
+# Steam omniauth
+gem 'omniauth-steam'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
