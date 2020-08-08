@@ -18,3 +18,6 @@ const images = require.context('../src/images', true)
 
 // Bootstrap
 import 'bootstrap/dist/js/bootstrap';
+
+// Import font awesome 5
+import "@fortawesome/fontawesome-free/js/all";
