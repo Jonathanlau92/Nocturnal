@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_054752) do
+ActiveRecord::Schema.define(version: 2020_08_08_142113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "image_category"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.decimal "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.bigint "team_id", null: false
+    t.string "match_identifier"
+    t.integer "score"
+    t.index ["league_id"], name: "index_matches_on_league_id"
+    t.index ["team_id"], name: "index_matches_on_team_id"
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string "session_id", null: false
@@ -22,6 +48,16 @@ ActiveRecord::Schema.define(version: 2020_08_02_054752) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
+  create_table "team_details", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
+    t.boolean "captain"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_team_details_on_team_id"
+    t.index ["user_id"], name: "index_team_details_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -46,4 +82,9 @@ ActiveRecord::Schema.define(version: 2020_08_02_054752) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "users"
+  add_foreign_key "matches", "leagues"
+  add_foreign_key "matches", "teams"
+  add_foreign_key "team_details", "teams"
+  add_foreign_key "team_details", "users"
 end

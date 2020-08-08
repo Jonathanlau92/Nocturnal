@@ -4,8 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   devise :omniauthable, omniauth_providers: %i[steam]
-  # belongs_to :team
 
+  has_many :team_details
+  has_many :teams, through: :team_details
+
+  has_many :images
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       # authentication key is in devise.rb and it's password instead of email, since steam doesn't provide us the email
