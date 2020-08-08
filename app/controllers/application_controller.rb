@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def after_sign_in_path_for(resource)
-    if resource.steam_authentication_data.present? and resource.email.nil?
+    if resource.steam_authentication_data.present? and resource.email.empty?
       edit_user_path(current_user)
     else
       stored_location_for(resource) || root_path
