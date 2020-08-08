@@ -3,11 +3,11 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width
     li.nav-item.mx-3
       = link_to root_path do
         = image_pack_tag 'media/src/images/Logo.png', class: "logo-size"
-    li.nav-item.mx-3
+    li.nav-item.hover-yellow.mx-3
       = link_to "Home", root_path, class: "nav-link"
-    li.nav-item.mx-3
+    li.nav-item.hover-yellow.mx-3
       = link_to "Leagues", root_path(anchor: "leagues"), class: "nav-link"
-    li.nav-item.mx-3
+    li.nav-item.hover-yellow.mx-3
       = link_to "Requirements", root_path(anchor: "requirements"), class: "nav-link"
   ul.navbar-nav.ml-auto
     - if user_signed_in?
