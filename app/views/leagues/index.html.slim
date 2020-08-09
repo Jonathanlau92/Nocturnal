@@ -1,1 +1,21 @@
-= render 'layouts/subheader'
+.league-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
+  = render 'layouts/subheader'
+  .container
+    .row.mb-5
+      .col-md-12.text-center
+        p.mb-0 JULY
+        h1.font-weight-bold.text-yellow.text-glow-white LEAGUE
+    .row
+      .col-md-4.text-center
+        p.font-weight-bold.mb-0 DATE
+        h1.font-weight-bold.text-white.text-glow-yellow JULY 27
+      .col-md-4.text-center
+        p.font-weight-bold.mb-0 PRIZE POOL
+        h1.font-weight-bold.text-white.text-glow-yellow.prize-pool-size SGD $250
+        span.text-white Winner takes it all!
+      .col-md-4.text-center
+        p.font-weight-bold.mb-0 TIME
+        h1.font-weight-bold.text-white.text-glow-yellow 8:00pm SGT
+    .row
+      .col-md-12.text-center
+        = link_to 'PURCHASE $5 PASS', root_path, class: 'btn btn-nocturnal'

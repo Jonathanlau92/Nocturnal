@@ -1,0 +1,12 @@
+.league-background-img {
+	background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/images/league-banner1.png');
+  background-attachment: fixed;
+  padding-bottom: 150px;
+  border-bottom: 1px solid white;
+}
+
+.prize-pool-size {
+	font-size: 3rem;
+}
