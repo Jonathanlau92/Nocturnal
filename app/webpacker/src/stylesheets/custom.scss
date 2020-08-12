@@ -1,4 +1,13 @@
 // For global styling
+
+$theme-colors: (
+  "secondary": #242424,
+  "warning": #FDDC56,
+  "dark": black
+);
+
+@import "bootstrap";
+
 html {
   scroll-behavior: smooth;
 }
