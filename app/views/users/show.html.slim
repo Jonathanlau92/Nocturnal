@@ -1,0 +1,145 @@
+.jumbotron.jumbotron-fluid.my-0 style="background-image: url(#{asset_pack_path 'media/src/images/Dota landscape 1.jpg'}); background-size: 100%;"
+  .container.text-center.mt-4
+    = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "240x240", class: "rounded-circle border-yellow-glow"
+    h1.text-uppercase.bold.text-warning.mt-4
+      = @user.username
+.jumbotron.jumbotron-fluid.text-center.my-0 style="background-color: #111524;"
+  .row.w-75.mx-auto
+    .col
+      | NAME
+      br
+      .bold Carl Kael
+    .col
+      | AGE
+      br
+      .bold 64 years
+    .col
+      | COUNTRY
+      br
+      .bold Kasmodan
+    .col
+      | POSITION
+      br
+      .bold Mid Lane
+    .col
+      | WINNINGS
+      br
+      .bold SGD$ 500
+    .col
+      | LEAGUES
+      br
+      .bold 24 Participated
+  h3.bold.mt-5 FAVOURITE HEROES
+  .row.w-75.mx-auto.mt-5
+    - 4.times
+      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black), url(#{asset_pack_path 'media/src/images/Ursa.jpg'});"
+        .hero-stats
+          .row.w-75.mx-auto.my-4.montserrat
+            .col-8.small.text-left.line-height-sm.bold
+              | MATCHES:
+              br
+              | WIN RATES:
+              br
+              | KDA RATIOS:
+              br
+              | KILLS:
+              br
+              | DEATHS:
+              br
+              | ASSISTS:
+              br
+              | GPM:
+              br
+              | XPM:
+            .col-4.small.text-right.line-height-sm.bold
+              | 223
+              br
+              | 56.4%
+              br
+              | 4.02
+              br
+              | 11.43
+              br
+              | 5.4
+              br
+              | 8.65
+              br
+              | 527
+              br
+              | 588
+          .montserrat.font-weight-bold.small MOST COMMON ITEMS
+        h3.hero-name URSA
+  h3.bold.mt-5 LEAGUE STATISTICS
+  .row.w-75.mx-auto.mt-4
+    .col
+      | TOTAL MATCHES
+      br
+      .bold 28
+    .col
+      | WINRATE
+      br
+      .bold 60%
+    .col
+      | AVG KILLS
+      br
+      .bold 9 Kills
+    .col
+      | AVG ASSITS
+      br
+      .bold 4 Assists
+    .col
+      | AVG GPM
+      br
+      .bold 480
+    .col
+      | AVG XPM
+      br
+      .bold 534
+  .card.w-50.mx-auto.mt-5.border-0
+    .card-header.bg-warning
+      h4.bold.text-dark.mb-0 TEAM OVERVIEW
+    .card-body.bg-dark
+      table.table
+        tbody
+          tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+            td.border-top-0
+              = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+            td.border-top-0.align-middle
+              .text-white Car.Goes.Zoom
+.modal.fade#teamModal role="dialog" tabindex="-1"
+  .modal-dialog.modal-width role="document"
+    .modal-content.text-center
+      .modal-header.bg-warning
+        h4.modal-title.text-dark.bold TEAM DETAILS
+        / button.close aria-label="Close" data-dismiss="modal" type="button"
+        /   span aria-hidden="true"  &times;
+      .modal-body.bg-dark
+        = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+        h6.text-white Car.Goes.Zoom
+        .row
+          .col
+            | Leagues
+            br
+            .bold 3 Participated
+          .col
+            | Total matches
+            br
+            .bold 8 Matches
+          .col
+            | Wins
+            br
+            .bold 5 Wins
+          .col
+            | Earning
+            br
+            .bold $250
+        table.table.bg-secondary.mx-auto style="width: 95%"
+          tbody
+            tr
+              td.border-top-0 width="15%"
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "50x50", class: "rounded-circle text-left border-yellow"
+              td.border-top-0.align-middle
+                .text-white.text-left Kael.66
+              td.border-top-0.align-middle
+                .text-white.text-right Mid Lane
+

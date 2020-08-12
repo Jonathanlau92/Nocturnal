@@ -1,0 +1,47 @@
+.hero-image {
+  background-size: 192px 270px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 270px;
+  transition: 0.4s;
+}
+
+.border-yellow-glow {
+  border: 5px solid #FDDC56;
+  box-shadow: 0 0 30px #FDDC56;
+}
+
+.hero-stats {
+  display: none;
+}
+
+.hero-image:hover > .hero-stats {
+  display: block;
+}
+
+.hero-name {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: italic;
+  padding-top: 230px;
+}
+
+.hero-image:hover > .hero-name {
+  display: none;
+}
+
+.hero-image:hover {
+  transform: scale(1.2);
+}
+
+.modal-width {
+  max-width: 700px;
+}
+
+.border-white {
+  border: 2px solid white;
+}
+
+.border-yellow {
+  border: 2px solid #FDDC56;
+}
