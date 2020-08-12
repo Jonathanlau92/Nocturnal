@@ -1,11 +1,11 @@
-.league-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
+#league-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
   = render 'layouts/subheader'
   .container
     .row.mb-5
       .col-md-12.text-center
-        p.mb-0 JULY
+        p.text-glow-white.font-weight-bold.mb-0 JULY
         h1.font-weight-bold.text-yellow.text-glow-white LEAGUE
-    .row
+    .row.mb-5
       .col-md-4.text-center
         p.font-weight-bold.mb-0 DATE
         h1.font-weight-bold.text-white.text-glow-yellow JULY 27
@@ -16,6 +16,112 @@
       .col-md-4.text-center
         p.font-weight-bold.mb-0 TIME
         h1.font-weight-bold.text-white.text-glow-yellow 8:00pm SGT
+    .row.mb-2
+      .col-md-12.text-center
+        = link_to 'PURCHASE $5 PASS', root_path, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+    .row.mb-5
+      .col-md-12.text-center
+        span.text-warning.font-weight-bold PURCHASE NOW 
+        span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
+        br
+        span.text-white 
+          | (redemption code provided after purchase)
     .row
       .col-md-12.text-center
-        = link_to 'PURCHASE $5 PASS', root_path, class: 'btn btn-nocturnal'
+        h6 Registered players:
+        span 99
+#league-detail-background.d-flex.flex-wrap.align-content-center.justify-content-center
+  .container
+    .row.mt-5
+      .col-md-12.text-center
+        h3.font-weight-bold.text-glow-yellow LEAGUE DETAILS
+    .row.gap
+      .col-md-12.text-center
+        span This league is organized by NOCTURNAL. Please take a moment to read the league
+        br
+        span  details and refer to our FAQs for commonly asked questions.
+        br
+        span If you require further clarification, please use the messenger icon located on the bottom right.
+    .row
+      .col-md-4.text-center
+        h5 MULTIPLES OF 5
+        p Each team consists of 5 participants. Any excess participants (EPs) will receive priority for next month’s league.
+        p I.e. this league has 102 participants. 2 participants will not have a team and be transferred to next month’s league.
+      .col-md-4.text-center
+        h5 ABANDONS
+        p In the event a participant abandons, the team may continue their match at a disadvantage OR forfeit. The Victim Participants (VPs), will receive priority for next month’s league.
+        p I.e. Team Jungle has 1 leaver. The 4 members are now VPs and will be transferred to next month’s league with a priority.
+      .col-md-4.text-center
+        h5 REFUNDS
+        p Refunds are provided until 3 days before the league commences. Only excess participants and victim participants can request for a refund.
+        p I.e. Strygwyr purchased the July Pass and requests for a refund on the 23 July. He will receive a refund. However, if it were 24 July, he would not receive a refund.
+#sequence-of-event-bg.d-flex.flex-wrap.align-content-center.justify-content-center
+  .container
+    .row.mt-5
+      .col-md-12.text-center
+        h3.font-weight-bold.text-glow-yellow SEQUENCE OF EVENTS
+    .row
+      .col-md-12.text-center
+        span The chronological sequence explains each event that occurs from the
+        br
+        span purchase of the pass to the grand finals. Any severe alterations will 
+        br
+        span be speculated and done by the Moderators.
+    .row.mt-5
+      .col-sm-6.text-center
+        h5.text-yellow PURCHASE PASS
+        span Share the love! Gift your friend
+        br
+        span a redemption code.
+    .row.mt-5
+      .col-sm-6.offset-6.text-center
+        h5.text-yellow VIEW TEAM DETAILS
+        span Get to know your team.
+        br
+        span Released 3 days prior to league under
+        br
+        span Team Details. A reminder will
+        br
+        span be sent to your email.
+    .row.mt-5
+      .col-sm-6.text-center
+        h5.text-yellow CHECK IN @ 7:00PM SGT
+        span Check in closes at 7:55pm sharp.
+        br
+        span Message your teammates to rally
+        br
+        span them early!
+    .row.mt-5
+      .col-sm-6.offset-6.text-center
+        h5.text-yellow JOIN LOBBY @ 7:30PM SGT
+        span Lobby ID & Password provided
+        br
+        span under Team Details.
+    .row.mt-5
+      .col-sm-6.text-center
+        h5.text-yellow LEAGUE STARTS @ 8:00PM SGT
+        span Single elimination league.
+    .row.mt-5
+      .col-sm-6.offset-6.text-center
+        h5.text-yellow BREAK TIME
+        span 15mins is provided for each
+        br
+        span team in between matches.
+    .row.mt-5
+      .col-sm-6.text-center
+        h5.text-yellow RELOBBY
+        span The moderator will transfer
+        br
+        span your team accordingly.
+    .row.mt-5
+      .col-sm-6.offset-6.text-center
+        h5.text-yellow GRAND FINALS
+        span Grand finals are a Best of 3.
+    .row.mt-5
+      .col-sm-6.offset-3.text-center
+        h5.text-yellow VICTORY
+        span Congratulations! Cash will be credited back to your payment 
+        br
+        span account. Your profile will be updated within 1 day.
+ 
+        
