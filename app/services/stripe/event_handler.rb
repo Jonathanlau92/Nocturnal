@@ -15,9 +15,10 @@ module Stripe
 
     def handle_checkout_session_completed(event)
       # Find the current_user using the data returned by stripe webhook
-      # @current_user = User.find_by(stripe_customer_id: event.data.object.customer)
+      @current_user = User.find_by(stripe_customer_id: event.data.object.customer)
       # If stripe data is empty, initialize it
       puts "HANDLE CHECKOUT SUCCESS"
+      @current_user.purchase
       
     end
   end
