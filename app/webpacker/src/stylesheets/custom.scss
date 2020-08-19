@@ -1,4 +1,13 @@
 // For global styling
+
+$theme-colors: (
+  "secondary": #242424,
+  "warning": #FDDC56,
+  "dark": black
+);
+
+@import "bootstrap";
+
 html {
   scroll-behavior: smooth;
 }
@@ -83,11 +92,6 @@ h1, h2, h3, h4, h5, h6, p {
   padding-top: 40px;
   padding-bottom: 60px;
   border-bottom: 1px solid #FDDC56;
-}
-
-.background-img-3:hover {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../src/images/Radiant Ancient.jpg');
-  transform: scale(1.01);
 }
 
 .btn-nocturnal {
