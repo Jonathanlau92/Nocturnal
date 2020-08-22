@@ -3,8 +3,7 @@
   .container
     .row.mb-5
       .col-md-12.text-center
-        p.text-glow-white.font-weight-bold.mb-0 JULY
-        h1.font-weight-bold.text-yellow.text-glow-white LEAGUE
+        = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
     .row.mb-5
       .col-md-4.text-center
         p.font-weight-bold.mb-0 DATE
@@ -18,7 +17,7 @@
         h1.font-weight-bold.text-white.text-glow-yellow 8:00pm SGT
     .row.mb-2
       .col-md-12.text-center
-        = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'ol-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+        = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
     .row.mb-5
       .col-md-12.text-center
         span.text-warning.font-weight-bold PURCHASE NOW 
@@ -30,8 +29,6 @@
       .col-md-12.text-center
         h6 Registered players:
         span 99
-#league-detail-background.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container
     .row.mt-5
       .col-md-12.text-center
         h3.font-weight-bold.text-glow-yellow LEAGUE DETAILS
@@ -55,8 +52,6 @@
         h5 REFUNDS
         p Refunds are provided until 3 days before the league commences. Only excess participants and victim participants can request for a refund.
         p I.e. Strygwyr purchased the July Pass and requests for a refund on the 23 July. He will receive a refund. However, if it were 24 July, he would not receive a refund.
-#sequence-of-event-bg.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container
     .row.mt-5
       .col-md-12.text-center
         h3.font-weight-bold.text-glow-yellow SEQUENCE OF EVENTS
