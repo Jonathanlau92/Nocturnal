@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   devise :omniauthable, omniauth_providers: %i[steam]
+ 
 
   has_many :team_details
   has_many :teams, through: :team_details
