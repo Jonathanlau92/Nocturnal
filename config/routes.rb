@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :leagues
   get "mission", to: "pages#mission"
+  get "privacy", to: "pages#privacy"
   
   root to: "pages#home"
 end
