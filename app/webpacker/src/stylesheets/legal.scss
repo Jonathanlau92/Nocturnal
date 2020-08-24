@@ -1,0 +1,55 @@
+ol {
+  counter-reset: item;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+ol > li {
+  display: block;
+}
+
+ol > li::before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+.legal > ol > li {
+  font-size: 22px;
+  font-weight: 700 !important;
+  color: #FDDC56;
+  padding: 20px 0px;
+}
+
+.legal ol ol > li {
+  font-size: 16px;
+  color: #FDDC56;
+  padding: 20px 0px;
+}
+
+.legal span > span > ul ul {
+  list-style-type: circle;
+}
+
+.legal ul ul li {
+  padding-bottom: 15px;
+}
+
+.legal ul ul, .legal span > span > ul > li {
+  padding-bottom: 20px;
+}
+
+.legal ul li {
+  padding-bottom: 40px;
+}
+
+.legal ol > span > ul {
+  padding-left: 18px;
+}
+
+.legal h7 + p {
+  padding-top: 20px;
+}
+
+.legal h7 {
+  font-weight: 600 !important;
+}
