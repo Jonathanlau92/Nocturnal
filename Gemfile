@@ -41,8 +41,13 @@ gem 'omniauth-steam'
 # Activerecord session store
 gem 'activerecord-session_store'
 
+
 # Admin page
 gem 'activeadmin'
+
+# Add aws S3
+gem "aws-sdk-s3", require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
