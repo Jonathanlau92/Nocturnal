@@ -20,7 +20,7 @@ ol > li::before {
   padding: 20px 0px;
 }
 
-.legal ol ol > li {
+.privacy ol ol > li {
   font-size: 16px;
   color: #FDDC56;
   padding: 20px 0px;
@@ -52,4 +52,8 @@ ol > li::before {
 
 .legal h7 {
   font-weight: 600 !important;
+}
+
+.rules ol ol {
+  line-height: 60px;
 }
