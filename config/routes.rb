@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "mission", to: "pages#mission"
   get "privacy", to: "pages#privacy"
   get "rules", to: "pages#rules"
+  get "terms", to: "pages#terms"
   
   root to: "pages#home"
 end
