@@ -1,7 +1,6 @@
 ol {
   counter-reset: item;
   padding-left: 0px;
-  list-style-type: none;
 }
 
 ol > li {
@@ -13,17 +12,27 @@ ol > li::before {
   counter-increment: item;
 }
 
-.legal > ol > li {
+.rules > ol > li,
+.privacy > ol > li,
+.terms h5 {
   font-size: 22px;
   font-weight: 700 !important;
-  color: #FDDC56;
+  color: #fddc56;
   padding: 20px 0px;
 }
 
 .privacy ol ol > li {
   font-size: 16px;
-  color: #FDDC56;
+  color: #fddc56;
   padding: 20px 0px;
+  font-weight: 400 !important;
+}
+
+.terms ol > li {
+  font-size: 16px;
+  color: #fddc56;
+  padding: 20px 0px;
+  font-weight: 600 !important;
 }
 
 .legal span > span > ul ul {
@@ -34,7 +43,8 @@ ol > li::before {
   padding-bottom: 15px;
 }
 
-.legal ul ul, .legal span > span > ul > li {
+.legal ul ul,
+.legal span > span > ul > li {
   padding-bottom: 20px;
 }
 
@@ -52,6 +62,10 @@ ol > li::before {
 
 .legal h7 {
   font-weight: 600 !important;
+}
+
+.legal p {
+  line-height: 36px;
 }
 
 .rules ol ol {
