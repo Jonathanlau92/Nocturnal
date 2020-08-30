@@ -1,0 +1,52 @@
+#league-background-img {
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: url('../src/images/league-banner1.jpg');
+  border-bottom: 1px solid #FDDC56;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+#league-detail-background {
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: url('../src/images/league-overview-p2-bg.jpg');
+  border-bottom: 1px solid #FDDC56;
+}
+
+#sequence-of-event-bg {
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: url('../src/images/sequence-of-event.jpg');
+  border-bottom: 1px solid #FDDC56;
+}
+
+#league-lobby-settings {
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: url('../src/images/Lobby-Settings.jpg');
+  border-bottom: 1px solid #FDDC56;
+  padding-bottom: 100px;
+}
+
+.gap {
+  margin-bottom: 400px;
+}
+
+.prize-pool-size {
+  font-size: 3rem;
+}
+
+.purchase-pass {
+  font-size: 0.8rem;
+}
+
+.league-logo {
+  width: 40%;
+}
+
+.subheader-height {
+  position: fixed;
+  top: 51px;
+  z-index: 1030;
+}
