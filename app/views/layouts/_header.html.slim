@@ -1,5 +1,5 @@
 nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width
-  ul.navbar-nav.nav-fill
+  ul.navbar-nav.nav-justified.w-100
     li.nav-item.mx-3
       = link_to root_path do
         = image_pack_tag 'media/src/images/Logo.png', class: "logo-size"
@@ -9,7 +9,16 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width
       = link_to "Leagues", leagues_path, class: "nav-link"
     li.nav-item.hover-yellow.mx-3
       = link_to "Requirements", root_path(anchor: "requirements"), class: "nav-link"
-  ul.navbar-nav.ml-auto
+    li.nav-item.dropdown.hover-yellow.mx-3
+      a.nav-link href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+        | More &darr;
+      .dropdown-menu.bg-dark
+        .dropdown-item.bg-dark
+          = link_to "Privacy Policy", privacy_path, class: "nav-link"
+        .dropdown-item.bg-dark
+          = link_to "Rules and Regulations", rules_path, class: "nav-link"
+        .dropdown-item.bg-dark
+          = link_to "Terms and Conditions", terms_path, class: "nav-link"
     - if user_signed_in?
       li.nav-item
         = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
