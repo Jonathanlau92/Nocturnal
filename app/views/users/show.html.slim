@@ -32,7 +32,7 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - 4.times
-      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black), url(#{asset_pack_path 'media/src/images/Ursa.jpg'});"
+      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black);"
         .hero-stats
           .row.w-75.mx-auto.my-4.montserrat
             .col-8.small.text-left.line-height-sm.bold
@@ -95,10 +95,10 @@
       | AVG XPM
       br
       .bold 534
-  .card.w-50.mx-auto.mt-5.border-0
-    .card-header.bg-warning
+  .card.w-50.mx-auto.mt-5.card-radius
+    .card-header.bg-warning.card-header-radius
       h4.bold.text-dark.mb-0 TEAM OVERVIEW
-    .card-body.bg-dark
+    .card-body.bg-dark.card-body-radius
       table.table
         tbody
           tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
@@ -108,12 +108,12 @@
               .text-white Car.Goes.Zoom
 .modal.fade#teamModal role="dialog" tabindex="-1"
   .modal-dialog.modal-width role="document"
-    .modal-content.text-center
-      .modal-header.bg-warning
-        h4.modal-title.text-dark.bold TEAM DETAILS
+    .modal-content.text-center.card-radius
+      .modal-header.bg-warning.card-header-radius
+        h4.modal-title.text-dark.bold.mx-auto TEAM DETAILS
         / button.close aria-label="Close" data-dismiss="modal" type="button"
         /   span aria-hidden="true"  &times;
-      .modal-body.bg-dark
+      .modal-body.bg-dark.card-body-radius.p-4
         = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
         h6.text-white Car.Goes.Zoom
         .row
@@ -133,7 +133,7 @@
             | Earning
             br
             .bold $250
-        table.table.bg-secondary.mx-auto style="width: 95%"
+        table.table.bg-secondary.mx-auto.my-4.card-radius style="width: 95%"
           tbody
             tr
               td.border-top-0 width="15%"
