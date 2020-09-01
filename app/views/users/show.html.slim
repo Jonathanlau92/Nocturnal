@@ -32,10 +32,10 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - 4.times
-      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black);"
+      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black), url(#{rails_blob_path(Image.first.raw_file)});"
         .hero-stats
-          .row.w-75.mx-auto.my-4.montserrat
-            .col-8.small.text-left.line-height-sm.bold
+          .row.mx-auto.my-4.montserrat
+            .col.small.text-left.line-height-sm.bold
               | MATCHES:
               br
               | WIN RATES:
@@ -51,7 +51,7 @@
               | GPM:
               br
               | XPM:
-            .col-4.small.text-right.line-height-sm.bold
+            .col.small.text-right.line-height-sm.bold
               | 223
               br
               | 56.4%
@@ -68,7 +68,8 @@
               br
               | 588
           .montserrat.font-weight-bold.small MOST COMMON ITEMS
-        h3.hero-name URSA
+        h3.hero-name
+          = Image.first.name
   .row.w-75.mx-auto.mt-5
     - 4.times
       a.col.d-flex.justify-content-center.align-items-center.select-hero href="#" data-toggle="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"

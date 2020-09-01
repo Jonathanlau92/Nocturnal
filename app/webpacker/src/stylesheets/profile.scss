@@ -1,8 +1,11 @@
 .hero-image {
-  background-size: 192px 270px;
+  background-size: 200px 300px;
   background-repeat: no-repeat;
   background-position: center;
-  height: 270px;
+  height: 300px;
+  border-radius: 20px;
+  margin-left: 36px;
+  margin-right: 36px;
   transition: 0.4s;
 }
 
@@ -31,6 +34,7 @@
   font-family: "Montserrat";
   font-weight: 600;
   font-style: italic;
+  text-transform: uppercase;
   padding-top: 230px;
 }
 
