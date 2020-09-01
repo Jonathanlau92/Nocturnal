@@ -3,7 +3,7 @@
     = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "240x240", class: "rounded-circle border-yellow-glow"
     h1.text-uppercase.bold.text-warning.mt-4
       = @user.username
-.jumbotron.jumbotron-fluid.text-center.my-0 style="background-color: #111524;"
+.jumbotron.jumbotron-fluid.text-center.my-0 style="background-image: url(#{asset_pack_path 'media/src/images/sequence-of-event.jpg'}); background-size: 100%; background-attachment: fixed; background-position: top;"
   .row.w-75.mx-auto
     .col
       | NAME
@@ -69,6 +69,10 @@
               | 588
           .montserrat.font-weight-bold.small MOST COMMON ITEMS
         h3.hero-name URSA
+  .row.w-75.mx-auto.mt-5
+    - 4.times
+      a.col.d-flex.justify-content-center.align-items-center.select-hero href="#" data-toggle="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
+        i.fa.fa-3x.fa-plus.text-muted
   h3.bold.mt-5 LEAGUE STATISTICS
   .row.w-75.mx-auto.mt-4
     .col

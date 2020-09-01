@@ -1,4 +1,6 @@
-$(document).on("turbolinks:load", function() { 
+$(document).on("turbolinks:load", function() {
+  $('[data-toggle="tooltip"]').tooltip();
+
   if ($('.container').hasClass('league-container')) {
     var didScroll;
     var lastScrollTop = 0;
