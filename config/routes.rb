@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :users
   resources :leagues
   get "mission", to: "pages#mission"
-
+  get "privacy", to: "pages#privacy"
+  get "rules", to: "pages#rules"
+  get "terms", to: "pages#terms"
   # Stripe payment path
   mount StripeEvent::Engine, at: '/stripe/webhook'
 
@@ -14,6 +16,6 @@ Rails.application.routes.draw do
     get 'cancel', to: 'checkout#cancel', as: :checkout_cancel
     get 'success', to: 'checkout#success', as: :checkout_success
   end
-  
+   
   root to: "pages#home"
 end
