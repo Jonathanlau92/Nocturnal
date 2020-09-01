@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include AASM
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,6 +11,21 @@ class User < ApplicationRecord
   has_many :teams, through: :team_details
 
   has_many :images
+
+  enum status: { no_pass: 0, purchased_pass: 1 }
+
+  aasm column: :status, enum: true do
+    state :no_pass, initial: true
+    state :purchased_pass
+
+    event :purchase do
+      transitions from: :no_pass, to: :purchased_pass
+    end
+
+    event :expired do
+      transitions from: :purchased_pass, to: :no_pass
+    end
+  end
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|

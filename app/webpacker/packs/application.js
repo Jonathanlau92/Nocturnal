@@ -21,3 +21,6 @@ import 'bootstrap/dist/js/bootstrap';
 
 // Import font awesome 5
 import "@fortawesome/fontawesome-free/js/all";
+
+// Custom javascript
+require("../src/javascripts/layout");

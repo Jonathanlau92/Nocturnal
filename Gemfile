@@ -45,6 +45,13 @@ gem 'activerecord-session_store'
 # Admin page
 gem 'activeadmin'
 
+# Stripe payment
+gem 'stripe'
+gem 'stripe_event'
+
+# State machine to check user's states
+gem 'aasm'
+
 # Add aws S3
 gem "aws-sdk-s3", require: false
 
