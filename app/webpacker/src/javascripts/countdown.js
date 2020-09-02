@@ -17,7 +17,7 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
+  // Display the result in the element with id="timer", conditionally add d/h/m strings if values are present
   document.getElementById("timer").innerHTML = "Registration Closes in " + (days > 0 ? days + "d " : "") + (hours > 0 ? hours + "h " : "") + (minutes > 0 ? minutes + "m " : "") + seconds + "s ";
 
   // If the count down is finished, write some text
