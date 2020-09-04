@@ -2,7 +2,7 @@
 
 $theme-colors: (
   "secondary": #242424,
-  "warning": #FDDC56,
+  "warning": #fddc56,
   "dark": black
 );
 
@@ -21,16 +21,29 @@ body {
   font-feature-settings: "lnum";
 }
 
-h1, h2, h3, h4, h5, h6, p, div {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
   line-height: 28px;
   font-weight: 300;
 }
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   text-shadow: -1px 1px 2px black;
 }
 
 .btn-warning {
-  background-color: #FDDC56 !important;
+  background-color: #fddc56 !important;
 }
 
 .montserrat {
@@ -46,7 +59,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .text-yellow {
-  color: #FDDC56;
+  color: #fddc56;
 }
 
 .nav-width {
@@ -67,8 +80,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .background-img {
   background-size: 100%;
-  background-repeat:no-repeat;
-  background-image: url('../src/images/1 Wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-image: url("../src/images/1 Wallpaper.jpg");
   background-attachment: fixed;
   padding-top: 150px;
   padding-bottom: 150px;
@@ -77,23 +90,24 @@ h1, h2, h3, h4, h5, h6, p {
 
 .background-img-1 {
   background-size: 65%, 100%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: 50% 80%, center top;
-  background-image: url('../src/images/Arc warden snap vs.png'), url('../src/images/Compiled Wallpaper.jpg');
+  background-image: url("../src/images/Arc warden snap vs.png"),
+    url("../src/images/Compiled Wallpaper.jpg");
   background-color: black;
   padding-top: 2%;
   padding-bottom: 3%;
-  border-bottom: 1px solid #FDDC56;
+  border-bottom: 1px solid #fddc56;
 }
 
 .background-img-2 {
   background-size: 100%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: center top;
-  background-image: url('../src/images/3 Wallpaper.jpg');
+  background-image: url("../src/images/3 Wallpaper.jpg");
   padding-top: 40px;
   padding-bottom: 60px;
-  border-bottom: 1px solid #FDDC56;
+  border-bottom: 1px solid #fddc56;
 }
 
 .btn-nocturnal {
@@ -101,7 +115,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 1rem;
   padding: 0.8rem 7rem;
   color: black;
-  background-color: #FDDC56;
+  background-color: #fddc56;
   font-family: "Montserrat";
 }
 
@@ -114,10 +128,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .text-glow-white {
-  text-shadow: 0px 0px 5px #FDDC56;
+  text-shadow: 0px 0px 5px #fddc56;
 }
 
 .text-glow-yellow {
-  text-shadow: -1px 1px 8px black, 0px 0px 10px #FDDC56, 0px 0px 15px #FDDC56, 0px 0px 20px #FDDC56;
+  text-shadow: -1px 1px 8px black, 0px 0px 10px #fddc56, 0px 0px 15px #fddc56,
+    0px 0px 20px #fddc56;
   font-weight: 400 !important;
+}
+
+.underline {
+  text-decoration: underline;
 }
