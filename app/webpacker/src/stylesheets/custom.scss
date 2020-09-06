@@ -70,8 +70,8 @@ h1, h2, h3, h4, h5, h6, p {
   background-repeat:no-repeat;
   background-image: url('../src/images/1 Wallpaper.jpg');
   background-attachment: fixed;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 11%;
+  padding-bottom: 11%;
   border-bottom: 1px solid white;
 }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-position: 50% 80%, center top;
   background-image: url('../src/images/Arc warden snap vs.png'), url('../src/images/Compiled Wallpaper.jpg');
   background-color: black;
-  padding-top: 2%;
+  padding-top: 3%;
   padding-bottom: 3%;
   border-bottom: 1px solid #FDDC56;
 }
@@ -91,8 +91,9 @@ h1, h2, h3, h4, h5, h6, p {
   background-repeat:no-repeat;
   background-position: center top;
   background-image: url('../src/images/3 Wallpaper.jpg');
-  padding-top: 40px;
-  padding-bottom: 60px;
+  background-color: black;
+  padding-top: 3%;
+  padding-bottom: 4%;
   border-bottom: 1px solid #FDDC56;
 }
 
@@ -120,4 +121,27 @@ h1, h2, h3, h4, h5, h6, p {
 .text-glow-yellow {
   text-shadow: -1px 1px 8px black, 0px 0px 5px #FDDC56, 0px 0px 10px #FDDC56, 0px 0px 15px #FDDC56;
   font-weight: 400 !important;
+}
+
+.anchor-padding {
+  padding-top: 51px;
+  margin-top: -51px;
+}
+
+.league-btn-mb {
+  margin-bottom:calc(6% - 40px);
+}
+
+.league-text {
+  width: 40%;
+  margin-bottom: 40%;
+}
+
+.dota-2-my {
+  margin-top: 1%;
+  margin-bottom: calc(8% - 80px);
+}
+
+.league-logo-size {
+  width:calc(31% - 196px);
 }
