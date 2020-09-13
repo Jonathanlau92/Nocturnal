@@ -72,7 +72,7 @@
           = Image.first.name
   .row.w-75.mx-auto.mt-5
     - 4.times
-      a.col.d-flex.justify-content-center.align-items-center.select-hero href="#" data-toggle="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
+      .col.d-flex.justify-content-center.align-items-center.select-hero data-toggle="modal"data-target="#heroModal" data-tooltip="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
         i.fa.fa-3x.fa-plus.text-muted
   h3.bold.mt-5 LEAGUE STATISTICS
   .row.w-75.mx-auto.mt-4
@@ -147,4 +147,9 @@
                 .text-white.text-left Kael.66
               td.border-top-0.align-middle
                 .text-white.text-right Mid Lane
-
+.modal.fade#heroModal role="dialog" tabindex="-1"
+  .modal-dialog.modal-width role="document"
+    .modal-content.text-center.card-radius
+      .modal-header.bg-warning.card-header-radius
+        h4.modal-title.text-dark.bold.mx-auto HERO CATALOGUE
+      .modal-body.bg-dark.card-body-radius.p-4

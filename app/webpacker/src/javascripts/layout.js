@@ -1,5 +1,5 @@
 $(document).on("turbolinks:load", function() {
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-tooltip="tooltip"]').tooltip();
 
   if ($('.container').hasClass('league-container')) {
     var didScroll;
