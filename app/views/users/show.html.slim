@@ -32,10 +32,10 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - 4.times
-      .col.hero-image style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black), url(#{rails_blob_path(Image.first.raw_file)});"
+      .col.hero-image style="--image: url(#{rails_blob_path(Image.first.raw_file)});"
         .hero-stats
-          .row.mx-auto.my-4.montserrat
-            .col.small.text-left.line-height-sm.bold
+          .row.mx-0.my-4.montserrat
+            .col-8.pr-0.small.text-left.line-height-sm.bold
               | MATCHES:
               br
               | WIN RATES:
@@ -51,7 +51,7 @@
               | GPM:
               br
               | XPM:
-            .col.small.text-right.line-height-sm.bold
+            .col-4.pl-0.small.text-right.line-height-sm.bold
               | 223
               br
               | 56.4%
