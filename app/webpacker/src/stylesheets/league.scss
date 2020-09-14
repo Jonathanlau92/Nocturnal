@@ -29,6 +29,15 @@
   padding-bottom: 100px;
 }
 
+// -----------------------------team detail page -----------------------------------------
+#league-team-details-background-img {
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-image: url('../src/images/league-banner1.jpg');
+  border-bottom: 1px solid #FDDC56;
+  padding-top: 40px;
+}
+
 .gap {
   margin-bottom: 400px;
 }
@@ -42,11 +51,32 @@
 }
 
 .league-logo {
-  width: 40%;
+  width: 35%;
 }
 
 .subheader-height {
   position: fixed;
   top: 51px;
   z-index: 1030;
+}
+
+.league-head-font-weight {
+  font-weight: 600 !important;
+}
+
+.horizontal-line-gradient { 
+  display:block;
+  border:none;
+  color:white;
+  height:1px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#fff), to(#000));
+}
+
+.heroes-size {
+  width: 200%;
+}
+
+.league-yellow {
+  color: #fff6bd;
 }
