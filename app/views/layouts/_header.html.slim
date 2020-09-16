@@ -19,6 +19,8 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.main-header
           = link_to "Rules and Regulations", rules_path, class: "nav-link"
         .dropdown-item.bg-dark
           = link_to "Terms and Conditions", terms_path, class: "nav-link"
+        .dropdown-item.bg-dark
+          = link_to "Credits", credits_path, class: "nav-link"
     - if user_signed_in?
       li.nav-item
         = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
