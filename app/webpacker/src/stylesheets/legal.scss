@@ -71,3 +71,15 @@ ol > li::before {
 .rules ol ol {
   line-height: 60px;
 }
+
+.legal a {
+  color: white;
+  text-decoration: underline;
+}
+ .legal .credits-link {
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+ }
