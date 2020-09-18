@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "privacy", to: "pages#privacy"
   get "rules", to: "pages#rules"
   get "terms", to: "pages#terms"
+  get "credits", to: "pages#credits"
 
   # Stripe payment path
   mount StripeEvent::Engine, at: '/stripe/webhook'

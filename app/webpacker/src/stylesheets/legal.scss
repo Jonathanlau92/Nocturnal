@@ -71,3 +71,30 @@ ol > li::before {
 .rules ol ol {
   line-height: 60px;
 }
+
+.legal .credits-link > a {
+  color: white;
+  text-decoration: underline;
+}
+.legal .credits-link {
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 1;
+  text-align: right;
+}
+
+.sidenav a {
+  color: white;
+  text-decoration: none;
+}
+
+.credits-sidenav {
+  top: 360px;
+}
