@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :leagues
+
+  get 'team-details', to: 'leagues#team_details', as: :team_details
   get "mission", to: "pages#mission"
   get "privacy", to: "pages#privacy"
   get "rules", to: "pages#rules"
   get "terms", to: "pages#terms"
+
   # Stripe payment path
   mount StripeEvent::Engine, at: '/stripe/webhook'
 

@@ -11,21 +11,21 @@
     - else
       = link_to 'Sign in now!', new_user_session_path, class: "btn btn-nocturnal bold"
     p.raleway-light Welcome back, Champion
-#leagues style="padding-top:51px; margin-top: -51px;"
+#leagues.anchor-padding
 .background-img-1.d-flex.flex-wrap.justify-content-center
   .text-center
     = image_pack_tag 'media/src/images/Dota.png', size:"40x40"
-    h4.montserrat.mt-3.mb-5 DOTA 2
-    = image_pack_tag 'media/src/images/League-Logo.png', size: "248x248"
+    h4.montserrat.dota-2-my DOTA 2
+    = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo-size"
     p#timer.text-warning
     p.mx-auto style="width: 31.3%"
       | Join this month’s league together with your friends. Dota’s talent, 
-      span.bold SIRACTIONSLACKS
+      span.bold xxxxxxxxxx
       | , will be casting the final Bo3 game. Tune in to our Twitch channel and subscribe.
-    = link_to "VIEW LEAGUE", leagues_path, class: "btn btn-nocturnal mt-2 mb-5"
+    = link_to "VIEW LEAGUE", leagues_path, class: "btn btn-nocturnal mt-2 league-btn-mb"
     h6.line-height-sm.mb-0.text-glow-white.mt-5 MONTHLY
     h2.line-height-sm.text-warning.text-glow-yellow.mb-3 LEAGUE
-    p.mx-auto style="width:40%; margin-bottom: 40%;" Reap your rewards through immerging victorious in NOCTURNAL’s monthly league. Engage with passionate individuals, form potential teams and reign triumphant over your competitors. With cash and prizes available, participation enhances your portfolio and amplifies your visibility to professional eSports Teams.
+    p.mx-auto.league-text Reap your rewards through immerging victorious in NOCTURNAL’s monthly league. Engage with passionate individuals, form potential teams and reign triumphant over your competitors. With cash and prizes available, participation enhances your portfolio and amplifies your visibility to professional eSports Teams.
     .row.mx-auto style="width: 64%"
       .col.mx-4
         .text-warning.bold NO TEAM? NO PROBLEM
@@ -40,7 +40,7 @@
       br
       i.small
         | (Redemption code provided after purchase)
-#requirements style="padding-top:51px; margin-top: -51px;"
+#requirements.anchor-padding
 .background-img-2.d-flex.flex-wrap.justify-content-center
   .text-center
     h6.line-height-sm.mb-0.text-glow-white LEAGUE
