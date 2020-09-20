@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :leagues
 
   get 'team-details', to: 'leagues#team_details', as: :team_details
+  get 'brackets', to: 'leagues#brackets', as: :brackets
   get "mission", to: "pages#mission"
   get "privacy", to: "pages#privacy"
   get "rules", to: "pages#rules"

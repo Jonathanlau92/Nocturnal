@@ -6,4 +6,8 @@ class LeaguesController < ApplicationController
 	def team_details
 		
 	end
+
+	def brackets
+		
+	end
 end
