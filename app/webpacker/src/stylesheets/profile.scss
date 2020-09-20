@@ -1,3 +1,11 @@
+.profile-img {
+  background-size: 100%;
+  background-image: url('../src/images/Dota landscape 1.jpg');
+  padding-top: 70px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #FDDC56;
+}
+
 .hero-image {
   background-size: 100%;
   background-repeat: no-repeat;
@@ -37,6 +45,8 @@
   font-weight: 600;
   font-style: italic;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: auto;
   padding-top: 140%;
 }
 
