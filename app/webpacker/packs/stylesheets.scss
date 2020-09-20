@@ -1,16 +1,17 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // font awesome 5
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
 
 // Devise flash messages
-@import '../src/stylesheets/devise';
+@import "../src/stylesheets/devise";
 
 // Custom CSS
-@import '../src/stylesheets/custom';
-@import '../src/stylesheets/user';
-@import '../src/stylesheets/layout';
-@import '../src/stylesheets/legal';
-@import '../src/stylesheets/league';
+@import "../src/stylesheets/custom";
+@import "../src/stylesheets/user";
+@import "../src/stylesheets/layout";
+@import "../src/stylesheets/legal";
+@import "../src/stylesheets/league";
+@import "../src/stylesheets/brackets";
