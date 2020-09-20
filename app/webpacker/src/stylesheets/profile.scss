@@ -76,4 +76,27 @@
   border-radius: 0px 0px 20px 20px !important;
 }
 
+.heroes-catalogue {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.checkbox-round {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 20px;
+  vertical-align: text-bottom;
+  border: 1px solid #ddd;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: #FDDC56;
+  border: 1px solid #FDDC56;
+}
+
 

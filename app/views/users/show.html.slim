@@ -148,8 +148,14 @@
               td.border-top-0.align-middle
                 .text-white.text-right Mid Lane
 .modal.fade#heroModal role="dialog" tabindex="-1"
-  .modal-dialog.modal-width role="document"
-    .modal-content.text-center.card-radius
+  .modal-dialog role="document"
+    .modal-content.card-radius
       .modal-header.bg-warning.card-header-radius
         h4.modal-title.text-dark.bold.mx-auto HERO CATALOGUE
-      .modal-body.bg-dark.card-body-radius.p-4
+      .modal-body.bg-dark.card-body-radius.p-5
+        i.small.raleway-light Select up to 4 heroes to showcase on your profile
+        .heroes-catalogue.mt-2
+          - Image.where(image_category: "heroes").each do |image|
+            .form-group
+              = check_box_tag 'heroes_id[]', image.id, false, class: "checkbox-round"
+              = image.name
