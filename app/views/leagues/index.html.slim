@@ -1,5 +1,5 @@
-#league-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container.league-container
+#league-background-img
+  .container
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
@@ -28,7 +28,7 @@
       .col-md-12.text-center
         h6 Registered players:
         span 99
-#league-detail-background.d-flex.flex-wrap.align-content-center.justify-content-center
+#league-detail-background.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -53,7 +53,7 @@
         h5 REFUNDS
         p Refunds are provided until 3 days before the league commences. Only excess participants and victim participants can request for a refund.
         p I.e. Strygwyr purchased the July Pass and requests for a refund on the 23 July. He will receive a refund. However, if it were 24 July, he would not receive a refund.
-#sequence-of-event-bg.d-flex.flex-wrap.align-content-center.justify-content-center
+#sequence-of-event-bg.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -136,7 +136,7 @@
         .col-md-4.text-center
           h5.text-glow-yellow Password: 
           span View 
-          = link_to 'Team Details', '#', class: 'text-glow-yellow text-warning'
+          = link_to 'Team Details', team_details_path, class: 'text-glow-yellow text-warning'
       .row.mt-5
         .col-md-4.text-center
           h5.text-glow-yellow Spectators: 
