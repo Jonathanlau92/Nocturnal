@@ -1,0 +1,19 @@
+#league-team-details-background-img
+  .container.league-container
+    .row.mb-5
+      .col-md-12.text-center
+        = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
+#team-details-bg.d-flex
+  .container
+    .row.mt-5
+      .col-md-12.text-center
+        h1.league-head-font-weight.text-glow-yellow PARTICIPANTS
+    .my-5.horizontal-line-gradient
+    .row.mt-5
+    	.col-md-4
+    		= button_tag 'PLAYERS', type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold'
+    		= button_tag 'TEAMS', type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
+    .row.mt-5
+      - Image.last(5).each do |image|
+        .col-md-2.mr-3
+          = image_tag(url_for(image.raw_file), class: 'heroes-size')
