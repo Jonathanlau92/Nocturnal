@@ -32,10 +32,10 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - if true #add condition in the future
-      - Image.first(4).each do |hero|
+      - Image.where(image_category: "heroes").last(4).each do |hero|
         .col.hero-image style="--image: url(#{rails_blob_path(hero.raw_file)});"
           .hero-stats
-            .row.mx-0.my-4.montserrat
+            .row.mx-0.mb-4.montserrat
               .col-8.pr-0.small.text-left.line-height-sm.bold
                 | MATCHES:
                 br
@@ -69,6 +69,19 @@
                 br
                 | 588
             .montserrat.font-weight-bold.small MOST COMMON ITEMS
+            - Image.where(image_category: "common_item").last(6).each do |item|
+             = image_tag item.raw_file, class: "w-25 m-1"
+            .row.px-3
+              .col.px-0
+                = image_pack_tag 'media/src/images/Carry.png', size: '22x22'
+              .col.px-0
+                = image_pack_tag 'media/src/images/Mid.png', size: '22x22'
+              .col.px-0
+                = image_pack_tag 'media/src/images/Offlane.png', size: '22x22'
+              .col.px-0
+                = image_pack_tag 'media/src/images/Soft Support.png', size: '22x22'
+              .col.px-0
+                = image_pack_tag 'media/src/images/Hard Support.png', size: '22x22'
           h3.hero-name
             = hero.name
     - else
@@ -156,7 +169,7 @@
       .modal-body.bg-dark.card-body-radius.p-5
         i.small.raleway-light Select up to 4 heroes to showcase on your profile
         .heroes-catalogue.mt-2
-          - Image.where(image_category: "heroes").each do |image|
+          - Image.where(image_category: "heroes").order(:name).each do |image|
             .form-group
               = check_box_tag 'heroes_id[]', image.id, false, class: "checkbox-round"
               = image.name
