@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_141105) do
+ActiveRecord::Schema.define(version: 2020_09_27_061816) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,10 +59,14 @@ ActiveRecord::Schema.define(version: 2020_08_26_141105) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "title"
-    t.date "date"
+    t.datetime "date"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "moderator"
+    t.string "lobby_id"
+    t.string "lobby_password"
+    t.string "discord_link"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -80,16 +85,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_141105) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
-  end
-
-  create_table "team_details", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "team_id", null: false
-    t.boolean "captain"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["team_id"], name: "index_team_details_on_team_id"
-    t.index ["user_id"], name: "index_team_details_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -113,13 +108,28 @@ ActiveRecord::Schema.define(version: 2020_08_26_141105) do
     t.string "stripe_customer_id"
     t.integer "status"
     t.boolean "superadmin", default: false
+    t.string "profile_picture"
+    t.string "cover_photo"
+    t.string "country"
+    t.integer "age"
+    t.integer "position"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_teams", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
+    t.boolean "captain", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_users_teams_on_team_id"
+    t.index ["user_id"], name: "index_users_teams_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "teams"
-  add_foreign_key "team_details", "teams"
-  add_foreign_key "team_details", "users"
+  add_foreign_key "users_teams", "teams"
+  add_foreign_key "users_teams", "users"
 end
