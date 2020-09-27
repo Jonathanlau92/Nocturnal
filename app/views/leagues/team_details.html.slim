@@ -1,0 +1,52 @@
+#league-team-details-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
+  .container.league-container
+    .row.mb-5
+      .col-md-12.text-center
+        = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
+#team-details-bg.d-flex.flex-wrap.align-content-center.justify-content-center
+  .container
+    .row.mt-5
+      .col-md-12.text-center
+        h1.league-head-font-weight.text-glow-yellow SRF.GAMING
+    .row.mt-1
+      .col-md-12.text-center
+        span Welcome to SrF.Gaming
+    .my-5.horizontal-line-gradient
+    .row
+      - Image.last(5).each do |image|
+        .col-md-2.mr-3
+          = image_tag(url_for(image.raw_file), class: 'heroes-size')
+    .my-5.horizontal-line-gradient
+    .row.mt-5
+      .col-md-3
+        p some pic
+      .col-md-6.text-center
+        p.league-yellow.font-weight-bold MODERATOR
+        span Your lobby moderator, ______, will be present on both Steam and Discord throughout the league. The moderator acts as a judge and controls any misalignments during the league period. Upon commencement of the league, 
+        span.underline ONLY
+        '
+        span the 
+        span.text-danger.font-weight-bold Captain 
+        span shall communicate with the moderator. This prevents miscommunications and eases the league process.
+    .row.mt-5
+      .col-md-6.offset-md-3.text-center
+        .row
+          .col-md-6
+            p.league-yellow.font-weight-bold LOBBY ID
+            = button_tag 'Nocturnal Lobby 1', class: 'btn btn-secondary rounded-pill col-md-10'
+          .col-md-6
+            p.league-yellow.font-weight-bold LOBBY PASSWORD
+            = button_tag 'Noct423', class: 'btn btn-secondary rounded-pill col-md-10'
+    .row.mt-5
+      .col-md-12.text-center
+        p.league-yellow.font-weight-bold DISCORD LINK
+        = button_tag 'Noct423', class: 'btn btn-secondary rounded-pill col-md-3'
+    .row.mt-5
+      .col-md-6.offset-md-3.text-center
+        p Join NOCTURNAL’s Discord channel where each team has a dedicated text and voice channel for better communication.
+    .row.my-5
+      .col-md-6.offset-md-3.text-center
+        span League winners will be presented the 
+        span.league-yellow.font-weight-bold CHAMPION 
+        span title to showcase your prestige for a month.
+

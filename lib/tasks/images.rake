@@ -13,4 +13,19 @@ namespace :images_upload do
       end
     end
   end
+
+  desc "This task calls for items images upload (Just need to call it once)"
+  task :dota_items => :environment do
+    @items_images = Dir.glob("lib/dota-items/*.png")
+    @items_images.each do |image|
+      # Check if image present.. before creating
+      unless Image.where(name: image.split('/').last.split('.').first.gsub(/_/, ' ')).present?
+        # Check images are running
+        puts "Images are running: #{image.split('/').last.split('.').first.gsub(/_/, ' ')}"
+        # image is 'lib/Dota.../*.png', hence split by / and by . to get the full hero name
+        @image_to_be_attached = Image.create(image_category: 1, name: image.split('/').last.split('.').first.gsub(/_/, ' '))
+        @image_to_be_attached.raw_file.attach(io: File.open(image), filename: image.split('/').last, content_type: 'image/png')
+      end
+    end
+  end
 end
