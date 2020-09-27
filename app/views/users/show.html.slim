@@ -35,7 +35,7 @@
       - Image.where(image_category: "heroes").last(4).each do |hero|
         .col.hero-image style="--image: url(#{rails_blob_path(hero.raw_file)});"
           .hero-stats
-            .row.mx-0.mb-4.montserrat
+            .row.mx-0.montserrat
               .col-8.pr-0.small.text-left.line-height-sm.bold
                 | MATCHES:
                 br
@@ -68,20 +68,25 @@
                 | 527
                 br
                 | 588
-            .montserrat.font-weight-bold.small MOST COMMON ITEMS
+            .montserrat.font-weight-bold.small.stats-margin MOST COMMON ITEMS
             - Image.where(image_category: "common_item").last(6).each do |item|
              = image_tag item.raw_file, class: "w-25 m-1"
             .row.px-3
               .col.px-0
-                = image_pack_tag 'media/src/images/Carry.png', size: '22x22'
+                = image_pack_tag 'media/src/images/Carry.png', class: "stats-icon"
+                small 90%
               .col.px-0
-                = image_pack_tag 'media/src/images/Mid.png', size: '22x22'
+                = image_pack_tag 'media/src/images/Mid.png', class: "stats-icon"
+                small 10%
               .col.px-0
-                = image_pack_tag 'media/src/images/Offlane.png', size: '22x22'
+                = image_pack_tag 'media/src/images/Offlane.png', class: "stats-icon"
+                small 0%
               .col.px-0
-                = image_pack_tag 'media/src/images/Soft Support.png', size: '22x22'
+                = image_pack_tag 'media/src/images/Soft Support.png', class: "stats-icon"
+                small 0%
               .col.px-0
-                = image_pack_tag 'media/src/images/Hard Support.png', size: '22x22'
+                = image_pack_tag 'media/src/images/Hard Support.png', class: "stats-icon"
+                small 0%
           h3.hero-name
             = hero.name
     - else
