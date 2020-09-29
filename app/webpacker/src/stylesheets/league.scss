@@ -19,6 +19,7 @@
   background-repeat: no-repeat;
   background-image: url("../src/images/League-Page-Overview-SoE-new.jpg");
   border-bottom: 1px solid #fddc56;
+  padding: 4% 15%;
 }
 
 #league-lobby-settings {
@@ -69,15 +70,15 @@
 
 // Sequence of events page 3x3 grid row position
 .events-row-1 {
-  margin-top: 27%;
+  margin-top: calc(38% - 135px);
 }
 
 .events-row-2 {
-  margin-top: 21%;
+  margin-top: calc(39% - 153px);
 }
 
 .events-row-3 {
-  margin-top: 28%;
+  margin-top: calc(39% - 83px);
 }
 
 .soe-category-title-size {
