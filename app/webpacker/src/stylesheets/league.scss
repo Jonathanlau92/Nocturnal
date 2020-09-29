@@ -11,6 +11,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: url("../src/images/league-overview-p2-bg.jpg");
+  background-color: #04090F;
   border-bottom: 1px solid #fddc56;
 }
 
@@ -111,7 +112,7 @@
 }
 
 .league-yellow {
-  color: #fff6bd;
+  color: #fff6bd !important;
 }
 
 #sequence-of-event-bg .col {
