@@ -31,3 +31,8 @@ $(document).on("turbolinks:load", function () {
     }, 1000);
   }
 });
+
+$(window).on("unload", function (e) {
+  console.log("helllllllop");
+  clearInterval(x);
+});
