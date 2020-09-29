@@ -14,7 +14,7 @@
     .my-5.horizontal-line-gradient
     .row
       - Image.last(5).each do |image|
-        .col-md-2.mr-3
+        .col.mx-2
           = image_tag(url_for(image.raw_file), class: 'heroes-size')
     .my-5.horizontal-line-gradient
     .row.mt-5
