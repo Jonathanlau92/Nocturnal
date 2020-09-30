@@ -22,12 +22,20 @@
         span.text-warning.font-weight-bold PURCHASE NOW 
         span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
         br
-        span.text-white 
-          | (redemption code provided after purchase)
+        i
+          | (Redemption code provided after purchase)
     .row
       .col-md-12.text-center
-        h6 Registered players:
-        span 99
+        - if true #condition where user has registered
+          = image_tag(Image.first.raw_file, class: 'user-circle')
+        - else
+          = image_tag(Image.first.raw_file, class: 'user-circle')
+        - Image.last(4).each do |image|
+          = image_tag(image.raw_file, class: 'users-circle')
+        .users-circle.bg-warning
+          span.users-count +94
+        p.mb-0 Registered players:
+        h5.bold.text-warning 99
 #league-detail-background.d-flex
   .container
     .row.mt-5
