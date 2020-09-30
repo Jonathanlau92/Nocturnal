@@ -81,7 +81,8 @@
       span Released 3 days prior to league 
       br
       span under 
-      span.bold Team Details
+      span
+        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
       span . A reminder will
       br
       span be sent to your email.
@@ -98,7 +99,8 @@
       span Lobby ID & Password provided
       br
       span under 
-      span.bold Team Details
+      span
+        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
       span .
     .col.text-center
       h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
