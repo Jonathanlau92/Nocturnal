@@ -105,46 +105,45 @@
       h5.soe-category-title-size.league-yellow.font-weight-bold VICTORY
       p Congratulations! Cash will be credited back to your payment account. Your profile will be updated within 1 day.
 #league-lobby-settings.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container.mb-5
+  .container-fluid.w-60.mx-auto
     .row.mt-5
       .col-md-12.text-center
         h3.font-weight-bold.text-glow-yellow LOBBY SETTINGS
-    .row.mt-5
+    .row
       .col-md-12.text-center
         span This is the default lobby settings. If there is discrepancy in any of the settings,
         br
         span inform the moderator and it will be changed accordingly. Do note 
         br
         span that streaming is prohibited and will result in a permanent ban.
-    .lobby-container.offset-md-1.mr-5
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow GAME MODE: 
-          span Captains Mode
-        .col-md-4.text-center 
-          h5.text-glow-yellow Bots: 
-          span No
-        .col-md-4.text-center
-          h5.text-glow-yellow Password: 
-          span View 
-          = link_to 'Team Details', team_details_path, class: 'text-glow-yellow text-warning'
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow Spectators: 
-          span No
-        .col-md-4.text-center 
-          h5.text-glow-yellow Server: 
-          span Singapore
-        .col-md-4.text-center
-          h5.text-glow-yellow Cheats: 
-          span No
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow Visibility: 
-          span Private
-        .col-md-4.text-center 
-          h5.text-glow-yellow League: 
-          span NOCTURNAL League
-        .col-md-4.text-center
-          h5.text-glow-yellow Casters: 
-          span xxxxx
+    .row.mt-5
+      .col-md-4.text-center
+        h5.league-yellow.bold GAME MODE
+        span Captains Mode
+      .col-md-4.text-center 
+        h5.league-yellow.bold BOTS
+        span No
+      .col-md-4.text-center
+        h5.league-yellow.bold PASSWORD
+        span View 
+        = link_to 'Team Details', team_details_path, class: 'league-yellow bold'
+    .row.mt-4
+      .col-md-4.text-center
+        h5.league-yellow.bold SPECTATORS
+        span No
+      .col-md-4.text-center 
+        h5.league-yellow.bold SERVER
+        span Singapore
+      .col-md-4.text-center
+        h5.league-yellow.bold CHEATS
+        span No
+    .row.mt-4
+      .col-md-4.text-center
+        h5.league-yellow.bold VISIBILITY
+        span Private
+      .col-md-4.text-center 
+        h5.league-yellow.bold LEAGUE
+        span NOCTURNAL League
+      .col-md-4.text-center
+        h5.league-yellow.bold CASTERS
+        span xxxxx

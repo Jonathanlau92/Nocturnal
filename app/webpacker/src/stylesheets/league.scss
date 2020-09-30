@@ -27,8 +27,9 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: url("../src/images/Lobby-Settings.jpg");
+  background-position-y: calc(70% + 120px);
   border-bottom: 1px solid #fddc56;
-  padding-bottom: 100px;
+  padding-bottom: 10%;
 }
 
 #team-details-bg {
