@@ -55,6 +55,8 @@ gem 'aasm'
 # Add aws S3
 gem "aws-sdk-s3", require: false
 
+# DOTA statistics API
+gem 'open_dota_api'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
