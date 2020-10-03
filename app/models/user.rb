@@ -7,8 +7,8 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i[steam]
  
 
-  has_many :team_details
-  has_many :teams, through: :team_details
+  has_many :user_teams
+  has_many :teams, through: :user_teams
 
   has_many :images
 
