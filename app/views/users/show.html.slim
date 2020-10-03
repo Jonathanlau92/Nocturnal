@@ -8,19 +8,19 @@
     .col
       | NAME
       br
-      .bold Carl Kael
+      .bold = @user.username
     .col
       | AGE
       br
-      .bold 64 years
+      .bold = @user.age
     .col
       | COUNTRY
       br
-      .bold Kasmodan
+      .bold = @user.country
     .col
       | POSITION
       br
-      .bold Mid Lane
+      .bold = @user.position
     .col
       | WINNINGS
       br
@@ -28,7 +28,7 @@
     .col
       | LEAGUES
       br
-      .bold 24 Participated
+      .bold = @user.get_user_league_count
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - if true #add condition in the future

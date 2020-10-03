@@ -42,4 +42,12 @@ class User < ApplicationRecord
       # user.skip_confirmation!
     end
   end
+
+  def get_user_league_count
+    count = 0
+    self.teams.each do |team|
+      count += team.leagues.count
+    end
+    return count
+  end
 end
