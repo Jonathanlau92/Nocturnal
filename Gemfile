@@ -41,7 +41,6 @@ gem 'omniauth-steam'
 # Activerecord session store
 gem 'activerecord-session_store'
 
-
 # Admin page
 gem 'activeadmin'
 
