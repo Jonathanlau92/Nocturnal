@@ -6,11 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable
   devise :omniauthable, omniauth_providers: %i[steam]
  
-
   has_many :user_teams
   has_many :teams, through: :user_teams
-
-  has_many :images
+  has_many :profile_images
+  has_many :images, through: :profile_images
 
   enum status: { no_pass: 0, purchased_pass: 1 }
   enum position: { hard_support: 0, soft_support: 1, offlane: 2, safe_lane: 3, mid_lane:4 }
