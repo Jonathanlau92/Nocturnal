@@ -33,6 +33,7 @@ class User < ApplicationRecord
       user.username = auth.info['nickname']
       user.country = auth.info['location']
       user.profile_picture = auth.info['image']
+      user.steam_id = (auth['uid'].to_i - 76561197960265728).to_s
     	user.steam_authentication_data = auth.info
       user.password = Devise.friendly_token[0, 20]
       
