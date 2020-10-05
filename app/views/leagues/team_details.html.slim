@@ -1,9 +1,9 @@
-#league-team-details-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container.league-container
+#league-team-details-background-img
+  .container
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
-#team-details-bg.d-flex.flex-wrap.align-content-center.justify-content-center
+#team-details-bg.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -14,7 +14,7 @@
     .my-5.horizontal-line-gradient
     .row
       - Image.last(5).each do |image|
-        .col-md-2.mr-3
+        .col.mx-2
           = image_tag(url_for(image.raw_file), class: 'heroes-size')
     .my-5.horizontal-line-gradient
     .row.mt-5
