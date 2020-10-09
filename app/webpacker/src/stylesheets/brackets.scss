@@ -149,7 +149,7 @@ html {
 }
 
 .tournament-bracket__match {
-  display: flex;
+  display: block;
   width: 100%;
   padding: 1em;
   border: 1px solid transparent;
@@ -205,8 +205,8 @@ html {
 
 //------------------------------- Custom----------------------------------------------------------
 .team-circle {
-  width: 80%;
-  height: 80%;
+  width: 25px;
+  height: 25px;
   text-align: center;
   border-radius: 50%;
   -webkit-border-radius: 50%;

@@ -14,23 +14,23 @@
             li.tournament-bracket__item
               .tournament-bracket__match.upper-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
+                  .col-3.pr-0
                     / team image
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
+                  .col-6.text-truncate.pl-1.pr-0
                     / team name
                     span.text-warning.font-weight-bold CHICKENS
-                  .col-md-3
+                  .col-3
                     / team score
-                    span.float-right 1
+                    .text-center 1
               .tournament-bracket__match.lower-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
-                    span.text-warning.font-weight-bold CHICKENSSSSSSSS
-                  .col-md-3
-                    span.float-right 0
+                  .col-6.text-truncate.pl-1.pr-0
+                    span.text-warning.font-weight-bold DROP.IT.HOT
+                  .col-3
+                    .text-center 0
       .tournament-bracket__round.tournament-bracket__round--best-of-8
         h3.tournament-bracket__round-title ROUND 2
         ul.tournament-bracket__list
@@ -39,23 +39,20 @@
             li.tournament-bracket__item
               .tournament-bracket__match.upper-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
-                    / team image
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
-                    / team name
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold CHICKENS
-                  .col-md-3
-                    / team score
-                    span.float-right 1
+                  .col-3
+                    .text-center 1
               .tournament-bracket__match.lower-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold DROP.IT.HOT
-                  .col-md-3
-                    span.float-right 0
+                  .col-3
+                    .text-center 0
       .tournament-bracket__round.tournament-bracket__round--quarterfinals
         h3.tournament-bracket__round-title ROUND 3
         ul.tournament-bracket__list
@@ -63,23 +60,20 @@
             li.tournament-bracket__item
               .tournament-bracket__match.upper-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
-                    / team image
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
-                    / team name
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold CHICKENS
-                  .col-md-3
-                    / team score
-                    span.float-right 1
+                  .col-3
+                    .text-center 1
               .tournament-bracket__match.lower-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold DROP.IT.HOT
-                  .col-md-3
-                    span.float-right 0
+                  .col-3
+                    .text-center 0
       .tournament-bracket__round.tournament-bracket__round--semifinals
         h3.tournament-bracket__round-title ROUND 4
         ul.tournament-bracket__list
@@ -87,43 +81,37 @@
             li.tournament-bracket__item
               .tournament-bracket__match.upper-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
-                    / team image
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
-                    / team name
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold CHICKENS
-                  .col-md-3
-                    / team score
-                    span.float-right 1
+                  .col-3
+                    .text-center 1
               .tournament-bracket__match.lower-bracket tabindex="0"
                 .row
-                  .col-md-3.pr-0
+                  .col-3.pr-0
                     = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                  .col-md-6.text-truncate.px-0
+                  .col-6.text-truncate.pl-1.pr-0
                     span.text-warning.font-weight-bold DROP.IT.HOT
-                  .col-md-3
-                    span.float-right 0
+                  .col-3
+                    .text-center 0
       .tournament-bracket__round.tournament-bracket__round--finals
         h3.tournament-bracket__round-title FINALS
         ul.tournament-bracket__list
           li.tournament-bracket__item
             .tournament-bracket__match.upper-bracket tabindex="0"
               .row
-                .col-md-3.pr-0
-                  / team image
+                .col-3.pr-0
                   = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                .col-md-6.text-truncate.px-0
-                  / team name
+                .col-6.text-truncate.pl-1.pr-0
                   span.text-warning.font-weight-bold CHICKENS
-                .col-md-3
-                  / team score
-                  span.float-right 1
+                .col-3
+                  .text-center 1
             .tournament-bracket__match.lower-bracket tabindex="0"
               .row
-                .col-md-3.pr-0
+                .col-3.pr-0
                   = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
-                .col-md-6.text-truncate.px-0
+                .col-6.text-truncate.pl-1.pr-0
                   span.text-warning.font-weight-bold DROP.IT.HOT
-                .col-md-3
-                  span.float-right 0
+                .col-3
+                  .text-center 0
