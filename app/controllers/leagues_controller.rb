@@ -8,6 +8,6 @@ class LeaguesController < ApplicationController
 	end
 
 	def participants
-		
+		@users = User.all
 	end
 end

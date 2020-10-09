@@ -14,6 +14,10 @@
     		= button_tag 'PLAYERS', type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold'
     		= button_tag 'TEAMS', type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
     .row.mt-5
-      - Image.last(5).each do |image|
-        .col-md-2.mr-3
-          = image_tag(url_for(image.raw_file), class: 'heroes-size')
+      - @users.each do |user|
+        .col-md-2.mx-3.my-3
+          - if user.images.present?
+            = image_tag(url_for(user.images.first.raw_file), class: 'heroes-size')
+            = user.profile_picture.present? ? (image_tag(url_for(user.profile_picture), class: 'image-overlay')) : (image_pack_tag 'media/src/images/Registration.jpg', class: "image-overlay")
+          - else
+            .empty-hero 

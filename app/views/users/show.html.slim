@@ -31,7 +31,7 @@
       .bold = @user.get_user_league_count
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
-    - if @user.images.present? #add condition in the future
+    - if @user.images.present?
       - @user.images.each do |hero|
         .col.hero-image style="--image: url(#{rails_blob_path(hero.raw_file)});"
           .hero-stats
