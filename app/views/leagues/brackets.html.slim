@@ -3,8 +3,11 @@
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
-#brackets-bg.d-flex.flex-wrap.align-content-center.justify-content-center
-  .tournament-container.mt-5
+#brackets-bg
+  .tournament-container
+    .text-center
+      h3.league-yellow.bold BRACKETS
+      p.w-50.mx-auto.mb-5 View your opposing team for this month's league. Opponents are subject to change and will be updated on this page.
     .tournament-bracket.tournament-bracket--rounded
       .tournament-bracket__round.tournament-bracket__round--best-of-16
         h3.tournament-bracket__round-title ROUND 1
