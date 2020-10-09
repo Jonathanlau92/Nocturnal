@@ -6,9 +6,8 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.main-header
     li.nav-item.hover-yellow.mx-3
       = link_to "Home", root_path, class: "nav-link mt-2"
     li.nav-item.hover-yellow.mx-3
+
       = link_to "Leagues", leagues_path, class: "nav-link mt-2"
-    li.nav-item.hover-yellow.mx-3
-      = link_to "Requirements", root_path(anchor: "requirements"), class: "nav-link mt-2"
     li.nav-item.dropdown.hover-yellow.mx-3
       a.nav-link.mt-2 href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
         | More &darr;
@@ -22,16 +21,18 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.main-header
         .dropdown-item.bg-dark
           = link_to "Credits", credits_path, class: "nav-link"
     - if user_signed_in?
-      - if current_user.steam_authentication_data.present?
-        li.dropdown
-          a.nav-link.profile-logo href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+      li.dropdown
+        a.nav-link.profile-logo href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+          - if current_user.steam_authentication_data.present?
             span.mr-2 = current_user.steam_authentication_data['nickname']
             span = image_tag(current_user.steam_authentication_data['image'], class: 'profile-circle')
-          .dropdown-menu.bg-dark
-            .dropdown-item.bg-dark
-              = link_to "Edit profile", '#', class: "nav-link"
-            .dropdown-item.bg-dark
-              = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
+          - else
+            span.mr-2 = current_user.username
+        .dropdown-menu.bg-dark
+          .dropdown-item.bg-dark
+            = link_to "Profile", user_path(current_user), class: "nav-link"
+          .dropdown-item.bg-dark
+            = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
     - else
       li.nav-item
         = link_to "Sign In", new_user_session_path, class: "nav-link"

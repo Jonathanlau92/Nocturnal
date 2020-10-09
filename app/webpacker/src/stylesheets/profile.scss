@@ -1,0 +1,119 @@
+.profile-img {
+  background-size: 100%;
+  background-image: url('../src/images/Dota landscape 1.jpg');
+  padding-top: 70px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #FDDC56;
+}
+
+.hero-image {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), black), var(--image);
+  border-radius: 20px;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  padding-top: 2.5%;
+  transition: 0.4s;
+}
+
+.select-hero {
+  border: 2px dashed lightgrey;
+  border-radius: 20px;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  padding-top: 12%;
+  padding-bottom: 12%;
+}
+
+.border-yellow-glow {
+  border: 5px solid #FDDC56;
+  box-shadow: 0 0 30px #FDDC56;
+}
+
+.hero-stats {
+  display: none;
+}
+
+.hero-image:hover > .hero-stats {
+  display: block;
+}
+
+.hero-name {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding-top: 123%;
+}
+
+.hero-image:hover > .hero-name {
+  display: none;
+}
+
+.hero-image:hover {
+  transform: scale(1.2);
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8), black), var(--image);
+}
+
+.modal-width {
+  max-width: 700px;
+}
+
+.border-white {
+  border: 2px solid white;
+}
+
+.border-yellow {
+  border: 2px solid #FDDC56;
+}
+
+.card-radius {
+  border: 0 !important;
+  border-radius: 20px !important;
+}
+
+.card-header-radius {
+  border: 0 !important;
+  border-radius: 20px 20px 0px 0px !important;
+}
+
+.card-body-radius {
+  border: 0 !important;
+  border-radius: 0px 0px 20px 20px !important;
+}
+
+.heroes-catalogue {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.checkbox-round {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 20px;
+  vertical-align: text-bottom;
+  border: 1px solid #ddd;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: #FDDC56;
+  border: 1px solid #FDDC56;
+}
+
+.stats-icon {
+  width: 60%;
+  margin-top: 20%;
+}
+
+.stats-margin {
+  margin-top: calc(55% - 85px);
+}

@@ -11,6 +11,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: url("../src/images/league-overview-p2-bg.jpg");
+  background-color: #04090F;
   border-bottom: 1px solid #fddc56;
 }
 
@@ -19,14 +20,16 @@
   background-repeat: no-repeat;
   background-image: url("../src/images/League-Page-Overview-SoE-new.jpg");
   border-bottom: 1px solid #fddc56;
+  padding: 4% 13.5%;
 }
 
 #league-lobby-settings {
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: url("../src/images/Lobby-Settings.jpg");
+  background-position-y: calc(70% + 120px);
   border-bottom: 1px solid #fddc56;
-  padding-bottom: 100px;
+  padding-bottom: 10%;
 }
 
 #team-details-bg {
@@ -69,15 +72,15 @@
 
 // Sequence of events page 3x3 grid row position
 .events-row-1 {
-  margin-top: 27%;
+  margin-top: calc(36% - 144px);
 }
 
 .events-row-2 {
-  margin-top: 21%;
+  margin-top: calc(36% - 145px);
 }
 
 .events-row-3 {
-  margin-top: 28%;
+  margin-top: calc(37% - 85px);
 }
 
 .soe-category-title-size {
@@ -106,11 +109,40 @@
 }
 
 .heroes-size {
-  width: 200%;
+  width: 100%;
 }
 
 .league-yellow {
-  color: #fff6bd;
+  color: #fff6bd !important;
+}
+
+// ----------------------------- others -----------------------------------------
+.user-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px solid #fddc56;
+}
+
+.users-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px solid black;
+  margin-left: -16px;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.users-count {
+  position: relative;
+  top: 9px;
+  color: black;
+  font-weight: bold;
 }
 
 //------------------------------League participants page --------------------------------

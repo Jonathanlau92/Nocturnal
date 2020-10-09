@@ -1,5 +1,5 @@
-#league-background-img.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container.league-container
+#league-background-img
+  .container
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
@@ -22,138 +22,158 @@
         span.text-warning.font-weight-bold PURCHASE NOW 
         span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
         br
-        span.text-white 
-          | (redemption code provided after purchase)
+        i
+          | (Redemption code provided after purchase)
     .row
       .col-md-12.text-center
-        h6 Registered players:
-        span 99
-#league-detail-background.d-flex.flex-wrap.align-content-center.justify-content-center
+        - if true #condition where user has registered
+          = image_tag(Image.first.raw_file, class: 'user-circle')
+        - else
+          = image_tag(Image.first.raw_file, class: 'user-circle')
+        - Image.last(4).each do |image|
+          = image_tag(image.raw_file, class: 'users-circle')
+        .users-circle.bg-warning
+          span.users-count +94
+        p.mb-0 Registered players:
+        h5.bold.text-warning 99
+#league-detail-background.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
         h3.font-weight-bold.text-glow-yellow LEAGUE DETAILS
     .row.gap
       .col-md-12.text-center
-        span This league is organized by NOCTURNAL. Please take a moment to read the league
-        br
-        span  details and refer to our FAQs for commonly asked questions.
-        br
-        span If you require further clarification, please use the messenger icon located on the bottom right.
+        p.w-75.mx-auto
+          | This league is organized by NOCTURNAL. Please take a moment to read the league details and refer to our 
+          span.league-yellow.bold FAQs 
+          | for commonly asked questions. If you require further clarification, please use the messenger icon located on the bottom right.
     .row
       .col-md-4.text-center
-        h5 MULTIPLES OF 5
+        h5.league-yellow.bold MULTIPLES OF 5
         p Each team consists of 5 participants. Any excess participants (EPs) will receive priority for next month’s league.
         p I.e. this league has 102 participants. 2 participants will not have a team and be transferred to next month’s league.
       .col-md-4.text-center
-        h5 ABANDONS
+        h5.league-yellow.bold ABANDONS
         p In the event a participant abandons, the team may continue their match at a disadvantage OR forfeit. The Victim Participants (VPs), will receive priority for next month’s league.
         p I.e. Team Jungle has 1 leaver. The 4 members are now VPs and will be transferred to next month’s league with a priority.
       .col-md-4.text-center
-        h5 REFUNDS
+        h5.league-yellow.bold REFUNDS
         p Refunds are provided until 3 days before the league commences. Only excess participants and victim participants can request for a refund.
         p I.e. Strygwyr purchased the July Pass and requests for a refund on the 23 July. He will receive a refund. However, if it were 24 July, he would not receive a refund.
-#sequence-of-event-bg.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container
-    .row.mt-5
-      .col-md-12.text-center
-        h3.font-weight-bold.text-glow-yellow SEQUENCE OF EVENTS
-    .row
-      .col-md-12.text-center
-        span The chronological sequence explains each event that occurs from the
-        br
-        span purchase of the pass to the grand finals. Any severe alterations will 
-        br
-        span be speculated and done by the Moderators.
-    .row.events-row-1
-      .col-sm-3.offset-sm-1.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold PURCHASE PASS
-        span Share the love! Gift your friend
-        br
-        span a redemption code.
-      .col-sm-4.text-center.ml-3
-        h5.soe-category-title-size.league-yellow.font-weight-bold VIEW TEAM DETAILS
-        span Get to know your team.
-        br
-        span Released 3 days prior to league under
-        br
-        span Team Details. A reminder will
-        br
-        span be sent to your email.
-      .col-sm-3.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold CHECK IN @ 7:00PM SGT
-        span Check in closes at 7:55pm sharp.
-        br
-        span Message your teammates to rally them early!
-    .row.events-row-2
-      .col-sm-3.offset-sm-1.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold JOIN LOBBY @ 7:30PM SGT
-        span Lobby ID & Password provided
-        br
-        span under Team Details.
-      .col-sm-4.text-center.ml-3
-        h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
-        span Single elimination league.
-      .col-sm-3.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold BREAK TIME
-        span 15mins is provided for each
-        br
-        span team in between matches.
-    .row.events-row-3.mb-5
-      .col-sm-3.offset-sm-1.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold RELOBBY
-        span The moderator will transfer
-        br
-        span your team accordingly.
-      .col-sm-4.text-center.ml-3
-        h5.soe-category-title-size.league-yellow.font-weight-bold GRAND FINALS
-        span Grand finals are a Best of 3.
-      .col-sm-3.text-center
-        h5.soe-category-title-size.league-yellow.font-weight-bold VICTORY
-        span Congratulations! Cash will be credited back to your payment 
-        br
-        span account. Your profile will be updated within 1 day.
+    p.mt-5.text-center
+      | View 
+      span
+       = link_to "Rules & Regulations", rules_path, class: "league-yellow text-decoration-none bold"
+      |  for more details
+#sequence-of-event-bg
+  .row
+    .col-md-12.text-center
+      h3.font-weight-bold.text-glow-yellow SEQUENCE OF EVENTS
+  .row
+    .col-md-12.text-center
+      span The chronological sequence explains each event that occurs from the
+      br
+      span purchase of the pass to the grand finals. Any severe alterations will 
+      br
+      span be speculated and done by the Moderators.
+  .row.events-row-1
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold PURCHASE PASS
+      span Share the love! Gift your friend
+      br
+      span a redemption code.
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold VIEW TEAM DETAILS
+      span Get to know your team.
+      br
+      span Released 3 days prior to league 
+      br
+      span under 
+      span
+        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+      span . A reminder will
+      br
+      span be sent to your email.
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold CHECK IN @ 7:00PM SGT
+      span Check in closes at 7:55pm sharp.
+      br
+      span Message your teammates to rally
+      br
+      span them early!
+  .row.events-row-2
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold JOIN LOBBY @ 7:30PM SGT
+      span Lobby ID & Password provided
+      br
+      span under 
+      span
+        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+      span .
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
+      span Single elimination league.
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold BREAK TIME
+      span 15mins is provided for
+      br
+      span each team in between matches.
+  .row.events-row-3
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold RELOBBY
+      span The moderator will transfer your
+      br
+      span team accordingly.
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold GRAND FINALS
+      span Grand finals are a Best of 3.
+    .col.text-center
+      h5.soe-category-title-size.league-yellow.font-weight-bold VICTORY
+      span Congratulations! Cash will be
+      br
+      span credited back to your payment account.
+      br
+      span Your profile will be updated within 1 day.
 #league-lobby-settings.d-flex.flex-wrap.align-content-center.justify-content-center
-  .container.mb-5
+  .container-fluid.w-60.mx-auto
     .row.mt-5
       .col-md-12.text-center
         h3.font-weight-bold.text-glow-yellow LOBBY SETTINGS
-    .row.mt-5
+    .row
       .col-md-12.text-center
         span This is the default lobby settings. If there is discrepancy in any of the settings,
         br
         span inform the moderator and it will be changed accordingly. Do note 
         br
         span that streaming is prohibited and will result in a permanent ban.
-    .lobby-container.offset-md-1.mr-5
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow GAME MODE: 
-          span Captains Mode
-        .col-md-4.text-center 
-          h5.text-glow-yellow Bots: 
-          span No
-        .col-md-4.text-center
-          h5.text-glow-yellow Password: 
-          span View 
-          = link_to 'Team Details', '#', class: 'text-glow-yellow text-warning'
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow Spectators: 
-          span No
-        .col-md-4.text-center 
-          h5.text-glow-yellow Server: 
-          span Singapore
-        .col-md-4.text-center
-          h5.text-glow-yellow Cheats: 
-          span No
-      .row.mt-5
-        .col-md-4.text-center
-          h5.text-glow-yellow Visibility: 
-          span Private
-        .col-md-4.text-center 
-          h5.text-glow-yellow League: 
-          span NOCTURNAL League
-        .col-md-4.text-center
-          h5.text-glow-yellow Casters: 
-          span xxxxx
+    .row.mt-5
+      .col-md-4.text-center
+        h5.league-yellow.bold GAME MODE
+        span Captains Mode
+      .col-md-4.text-center 
+        h5.league-yellow.bold BOTS
+        span No
+      .col-md-4.text-center
+        h5.league-yellow.bold PASSWORD
+        span View 
+        = link_to 'Team Details', team_details_path, class: 'league-yellow bold'
+    .row.mt-4
+      .col-md-4.text-center
+        h5.league-yellow.bold SPECTATORS
+        span No
+      .col-md-4.text-center 
+        h5.league-yellow.bold SERVER
+        span Singapore
+      .col-md-4.text-center
+        h5.league-yellow.bold CHEATS
+        span No
+    .row.mt-4
+      .col-md-4.text-center
+        h5.league-yellow.bold VISIBILITY
+        span Private
+      .col-md-4.text-center 
+        h5.league-yellow.bold LEAGUE
+        span NOCTURNAL League
+      .col-md-4.text-center
+        h5.league-yellow.bold CASTERS
+        span xxxxx
