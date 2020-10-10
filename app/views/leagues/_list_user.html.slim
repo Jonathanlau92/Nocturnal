@@ -1,0 +1,11 @@
+.col-md-2.mx-3.my-3
+  - if user.images.present?
+    = image_tag(url_for(user.images.first.raw_file), class: 'heroes-size')
+    / Check if current_user is user. If it is, then put glowing yellow border, else put white growing border
+    = user.profile_picture.present? ? (image_tag(url_for(user.profile_picture), class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])) : (image_pack_tag 'media/src/images/Registration.jpg', class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])
+    / to account for long name
+    span.name-overlay = user.username.first(6)
+  - else
+    = image_tag(url_for(@default_image.raw_file), class: 'heroes-size')
+    = user.profile_picture.present? ? (image_tag(url_for(user.profile_picture), class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])) : (image_pack_tag 'media/src/images/Registration.jpg', class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])
+    span.name-overlay = user&.username&.first(6)
