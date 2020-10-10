@@ -168,13 +168,42 @@
 .image-overlay {
   position: absolute;
   left: 35%;
-  top: 30%;
+  top: 20%;
   opacity: 1;
   width: 25%;
-  height: 25%;
+  height: 20%;
   text-align: center;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  border: 2px solid #fddc56;
+}
+
+.name-overlay {
+  position: absolute;
+  left: 25%;
+  top: 45%;
+  opacity: 1;
+  width: 25%;
+  height: 20%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.glowing-border-for-current-user {
+  border: 3px solid #fddc56;
+  -moz-box-shadow: 0 0 10px #fff;
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 
+    0 0 10px #fff,
+    0 0 30px 20px black;
+}
+
+.glowing-border-for-other-user {
+  border: 3px solid white;
+  -moz-box-shadow: 0 0 10px #fff;
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 
+    0 0 10px #fff,
+    0 0 30px 20px black;
 }
