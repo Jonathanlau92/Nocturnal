@@ -225,6 +225,8 @@ html {
 }
 
 .upper-bracket:hover,
-.lower-bracket:hover {
+.lower-bracket:hover,
+.upper-bracket.hover,
+.lower-bracket.hover {
   background-color: #2b2b2b;
 }
