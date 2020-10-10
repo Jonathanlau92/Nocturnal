@@ -8,6 +8,11 @@ class LeaguesController < ApplicationController
 	end
 
 	def participants
-		@users = User.all
+    if params[:team].present?
+      @teams = Team.all
+    else
+		  @users = User.all
+    end
+    @default_image = Image.first
 	end
 end
