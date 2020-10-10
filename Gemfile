@@ -54,6 +54,8 @@ gem 'aasm'
 
 # Add aws S3
 gem "aws-sdk-s3", require: false
+# Error monitoring
+gem 'rollbar'
 
 
 group :development, :test do
