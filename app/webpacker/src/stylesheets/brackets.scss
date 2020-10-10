@@ -160,10 +160,6 @@ html {
   background-color: #1a1919;
   font-size: 11px;
 
-  &:focus {
-    border-color: #2196f3;
-  }
-
   &::after {
     transition: all 0.2s linear;
   }
