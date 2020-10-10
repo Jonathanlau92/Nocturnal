@@ -1,0 +1,25 @@
+// All layout CSS: header, footer, body etc
+li.hover-yellow a:hover {
+  border-bottom: 3px solid #FDDC56;
+  text-color: #FDDC56;
+}
+
+li.shadow-yellow a:hover {
+  text-shadow: 0 0 3px #FDDC56;
+}
+
+.nav-up {
+  top: -70px;
+}
+
+.main-header .nav-down {
+  top: 0;
+}
+
+.dropdown-item {
+  font-size: 0.8rem;
+}
+
+.text-footer {
+  color: darkgrey;
+}

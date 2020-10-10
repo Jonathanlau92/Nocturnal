@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Add fonts
+gem 'font_awesome5_rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -33,11 +36,31 @@ gem "slim-rails"
 
 # For login authentication
 gem 'devise'
+# Steam omniauth
+gem 'omniauth-steam'
+# Activerecord session store
+gem 'activerecord-session_store'
+
+
+# Admin page
+gem 'activeadmin'
+
+# Stripe payment
+gem 'stripe'
+gem 'stripe_event'
+
+# State machine to check user's states
+gem 'aasm'
+
+# Add aws S3
+gem "aws-sdk-s3", require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
+  gem 'dotenv-rails'
 end
 
 group :development do

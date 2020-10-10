@@ -1,27 +1,180 @@
-.container-image {
-  background-image: url('../src/images/Missions');
-  background-size:cover;
-  background-repeat:no-repeat;
-  height: 1000px;
+// For global styling
+
+$theme-colors: (
+  "secondary": #242424,
+  "warning": #fddc56,
+  "dark": black
+);
+
+@import "bootstrap";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Raleway";
+  color: white;
+  letter-spacing: 2px;
+  min-height: 100%;
+  font-size: 0.8rem;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
 }
 
-* {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  line-height: 28px;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-shadow: -1px 1px 1px black;
+}
+
+.btn-warning {
+  background-color: #fddc56 !important;
+}
+
+.montserrat {
   font-family: "Montserrat";
-  font-weight: 200 !important;
+}
+
+.raleway-light {
+  font-weight: 100 !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.text-yellow {
+  color: #fddc56;
+}
+
+.nav-width {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.logo-size {
+  width: 130px;
+}
+
+.heading {
+  font-weight: 900 !important;
+  font-size: 3.3rem;
   color: white;
-  line-height: 1.5 !important;
- }
+  font-family: "Montserrat";
+}
 
- .heading {
-   font-weight: 800 !important;
-   font-size: 3.3rem;
-   color: #FDDC56;
- }
+.background-img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/1 Wallpaper.jpg");
+  background-attachment: fixed;
+  padding-top: 11%;
+  padding-bottom: 11%;
+  border-bottom: 1px solid white;
+}
 
- .bold {
-   font-weight: 600 !important;
- }
+.background-img-1 {
+  background-size: 65%, 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 80%, center top;
+  background-image: url("../src/images/Arc warden snap vs.png"),
+    url("../src/images/Compiled Wallpaper.jpg");
+  background-color: black;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-bottom: 1px solid #fddc56;
+}
 
- .text-yellow {
-  color: #FDDC56;
- }
+.background-img-2 {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url('../src/images/3 Wallpaper.jpg');
+  background-color: black;
+  padding-top: 3%;
+  padding-bottom: 4%;
+  border-bottom: 1px solid #FDDC56;
+}
+
+.btn-nocturnal {
+  border-radius: 30px;
+  font-size: 1rem;
+  padding: 0.8rem 7rem;
+  color: black;
+  background-color: #fddc56;
+  font-family: "Montserrat";
+}
+
+.line-height-sm {
+  line-height: 1 !important;
+}
+
+.line-height-md {
+  line-height: 2 !important;
+}
+
+.text-glow-white {
+  text-shadow: 0px 0px 5px #fddc56;
+}
+
+.text-glow-yellow {
+  text-shadow: -1px 1px 8px black, 0px 0px 10px #fddc56, 0px 0px 15px #fddc56,
+    0px 0px 20px #fddc56;
+  font-weight: 400 !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.anchor-padding {
+  padding-top: 51px;
+  margin-top: -51px;
+}
+
+.league-btn-mb {
+  margin-bottom:calc(6% - 60px);
+}
+
+.league-text {
+  width: 40%;
+  margin-bottom: 40%;
+}
+
+.dota-2-my {
+  margin-top: 1%;
+  margin-bottom: calc(7% - 90px);
+}
+
+.league-logo-size {
+  width: calc(31% - 146px);
+}
+
+.profile-circle {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px solid #fddc56;
+}
+
+.profile-logo {
+  display: flex;
+  align-items: center;
+}
+
+.w-60 {
+  width: 60%;
+}

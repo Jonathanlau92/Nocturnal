@@ -1,0 +1,146 @@
+#league-background-img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/league-banner1.jpg");
+  border-bottom: 1px solid #fddc56;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+#league-detail-background {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/league-overview-p2-bg.jpg");
+  background-color: #04090F;
+  border-bottom: 1px solid #fddc56;
+}
+
+#sequence-of-event-bg {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/League-Page-Overview-SoE-new.jpg");
+  border-bottom: 1px solid #fddc56;
+  padding: 4% 13.5%;
+}
+
+#league-lobby-settings {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/Lobby-Settings.jpg");
+  background-position-y: calc(70% + 120px);
+  border-bottom: 1px solid #fddc56;
+  padding-bottom: 10%;
+}
+
+#team-details-bg {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/sequence-of-event.jpg");
+  border-bottom: 1px solid #fddc56;
+}
+
+// -----------------------------team detail page -----------------------------------------
+#league-team-details-background-img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../src/images/league-banner1.jpg");
+  border-bottom: 1px solid #fddc56;
+  padding-top: 40px;
+}
+
+.gap {
+  margin-bottom: 400px;
+}
+
+.prize-pool-size {
+  font-size: 3rem;
+}
+
+.purchase-pass {
+  font-size: 0.8rem;
+}
+
+.league-logo {
+  width: 35%;
+}
+
+.subheader-height {
+  position: fixed;
+  top: 60px;
+  z-index: 1030;
+}
+
+// Sequence of events page 3x3 grid row position
+.events-row-1 {
+  margin-top: calc(36% - 144px);
+}
+
+.events-row-2 {
+  margin-top: calc(36% - 145px);
+}
+
+.events-row-3 {
+  margin-top: calc(37% - 85px);
+}
+
+.soe-category-title-size {
+  font-size: 15px;
+}
+
+.league-head-font-weight {
+  font-weight: 600 !important;
+}
+
+.horizontal-line-gradient {
+  display: block;
+  border: none;
+  color: white;
+  height: 1px;
+  background: black;
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#fff),
+    to(#000)
+  );
+}
+
+.heroes-size {
+  width: 100%;
+}
+
+.league-yellow {
+  color: #fff6bd !important;
+}
+
+// ----------------------------- others -----------------------------------------
+.user-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px solid #fddc56;
+}
+
+.users-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px solid black;
+  margin-left: -16px;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.users-count {
+  position: relative;
+  top: 9px;
+  color: black;
+  font-weight: bold;
+}

@@ -1,28 +1,106 @@
 /*flash*/
 .alert-error {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
  }
 
 .alert-alert {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
-    text-align: left;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
  }
 
 .alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
  }
 
 .alert-notice {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
  }
+// Font size
+.devise-font-size {
+  font-size: 10px;
+}
+
+#error_explanation {
+  font-size: 10px;
+}
+// Background for devise sign in and sign up page
+#registration-background {
+  background-image: url('../src/images/Registration');
+  overflow: visible;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+#login-background {
+  background-image: url('../src/images/Sign in');
+  background-position: center;
+  overflow: visible;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+
+.form-wrapper {
+  margin-left: 10%;
+}
+
+// Form to underline instead of box
+input[type="email"], input[type="password"], input[type="text"], input[type="number"],
+select.form-control {
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.form-wrapper {
+  padding: 0 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+}
+
+.nocturnal-devise-logo {
+  width: 80%;
+}
+
+// Login page where it divides the line to login with steam
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.separator::before, .separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid white;
+}
+.separator::before {
+  margin-right: .25em;
+}
+.separator::after {
+  margin-left: .25em;
+}
