@@ -9,9 +9,13 @@
       .col-md-12.text-center
         h1.league-head-font-weight.text-yellow PARTICIPANTS
     .row.mt-5
-    	.col-md-4
-    		= link_to 'PLAYERS', participants_path, type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold'
-    		= link_to 'TEAMS', participants_path(team: 'team'), type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
+      .col-md-4
+        = link_to 'PLAYERS', participants_path, type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold'
+        = link_to 'TEAMS', participants_path(team: 'team'), type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
+      .col-md-8
+        .float-right
+          = button_tag "SORT BY: ", type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold', style: "cursor: default;"
+          = link_to 'A - Z', participants_path(sort: true), type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
     - if @users.present?
       .row.mt-5
         - @users.each do |user|
