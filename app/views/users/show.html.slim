@@ -175,13 +175,19 @@
     .modal-content.card-radius
       .modal-header.bg-warning.card-header-radius
         h4.modal-title.text-dark.bold.mx-auto HERO CATALOGUE
-      .modal-body.bg-dark.card-body-radius.p-5
+      .modal-body.bg-dark.card-body-radius.px-5.py-4
         = form_for(@user, url: user_update_heroes_images_path(@user)) do |f|
+          .input-group
+            .input-group-prepend
+              .input-group-text.bg-secondary.border-0.input-group-border-radius-left
+                i.fa.fa-search.text-muted
+            input#heroSearch.form-control placeholder=("Search for your hero") type="text"
           .form-group
             i.small.raleway-light Select up to 4 heroes to showcase on your profile
             = submit_tag "Add", class: 'btn btn-sm btn-warning float-right'
           .heroes-catalogue.mt-2
-            - Image.where(image_category: "heroes").order(:name).each do |image|
-              .form-group
-                = check_box_tag 'heroes_image_id[]', image.id, false, class: "checkbox-round"
-                = image.name
+            ul#heroList.list-unstyled
+              - Image.where(image_category: "heroes").order(:name).each do |image|
+                li
+                  = check_box_tag 'heroes_image_id[]', image.id, false, class: "checkbox-round"
+                  = image.name
