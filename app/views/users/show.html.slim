@@ -188,6 +188,6 @@
           .heroes-catalogue.mt-2
             ul#heroList.list-unstyled
               - Image.where(image_category: "heroes").order(:name).each do |image|
-                li
+                li.mb-2
                   = check_box_tag 'heroes_image_id[]', image.id, false, class: "checkbox-round"
                   = image.name
