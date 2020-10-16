@@ -56,7 +56,8 @@ gem "aws-sdk-s3", require: false
 # Error monitoring
 gem 'rollbar'
 
-# DOTA statistics API
+# HTTPARTY to get Opendota API data
+gem "httparty"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
