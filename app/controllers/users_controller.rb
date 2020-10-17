@@ -19,9 +19,16 @@ class UsersController < ApplicationController
 
   def update_heroes_images
     @user = User.find(params[:user_id])
+    @dota_api_call = OpenDota.new(@user)
     # Store the images in an array and then assign to user
     params[:heroes_image_id].each do |hero_image_id|
-      ProfileImage.create(user_id: @user.id, image_id: hero_image_id)
+      # Pass in image name to get hero stats
+      @hero_stat = @dota_api_call.get_hero_stat(Image.find(hero_image_id).name)
+      if @hero_stat.present?
+        ProfileImage.create(user_id: @user.id, image_id: hero_image_id, games_played: @hero_stat["games"], win_rate: @hero_stat["win"], with_games: @hero_stat["with_games"], with_win: @hero_stat["with_win"])
+      else
+        ProfileImage.create(user_id: @user.id, image_id: hero_image_id)
+      end
     end
     redirect_to user_path(@user), notice: 'User images added successfully.'
   end
