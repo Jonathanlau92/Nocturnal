@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, except: :update_heroes_images
+  include Adapter
 
   def show
   end
