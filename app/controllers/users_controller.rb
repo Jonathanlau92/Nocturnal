@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   include Adapter
 
   def show
+    @profile_images = @user.profile_images
   end
 
   def edit
@@ -25,8 +26,10 @@ class UsersController < ApplicationController
       # Pass in image name to get hero stats
       @hero_stat = @dota_api_call.get_hero_stat(Image.find(hero_image_id).name)
       if @hero_stat.present?
+        # If API call returns a hero, then store the statistics into the database
         ProfileImage.create(user_id: @user.id, image_id: hero_image_id, games_played: @hero_stat["games"], win_rate: @hero_stat["win"], with_games: @hero_stat["with_games"], with_win: @hero_stat["with_win"])
       else
+        #else, just create a profile picture with nil stats
         ProfileImage.create(user_id: @user.id, image_id: hero_image_id)
       end
     end
