@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     # Store the images in an array and then assign to user
     ProfileImage.where(user_id: @user.id).destroy_all
-    params[:heroes_image_id].first(4).each do |hero_image_id|
+    params[:heroes_image_ids].first(4).each do |hero_image_id|
       ProfileImage.create(user_id: @user.id, image_id: hero_image_id)
     end
     redirect_to user_path(@user), notice: 'User images added successfully.'

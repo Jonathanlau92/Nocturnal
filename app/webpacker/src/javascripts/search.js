@@ -1,15 +1,17 @@
 $(document).on("turbolinks:load", function() {
   $("#heroSearch").keyup(function() {
-    search();
+    searchHero();
+  });
+  $("#teamSearch").keyup(function() {
+    searchTeam();
   });
 });
-function search() {
+function searchHero() {
   // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('heroSearch');
+  var input, filter, li, i, txtValue;
+  input = $("#heroSearch")[0];
   filter = input.value.toUpperCase();
-  ul = document.getElementById("heroList");
-  li = ul.getElementsByTagName('li');
+  li = $("#heroList li");
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
@@ -21,3 +23,22 @@ function search() {
     }
   }
 }
+
+function searchTeam() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = $("#teamSearch")[0];
+  filter = input.value.toUpperCase();
+  tr = $("#teamList tr td.team-name");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    txtValue = tr[i].textContent || tr[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].parentElement.style.display = "";
+    } else {
+      tr[i].parentElement.style.display = "none";
+    }
+  }
+}
+
