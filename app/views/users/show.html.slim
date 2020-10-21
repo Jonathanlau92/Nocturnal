@@ -182,12 +182,15 @@
               .input-group-text.bg-secondary.border-0.input-group-border-radius-left
                 i.fa.fa-search.text-muted
             input#heroSearch.form-control placeholder=("Search for your hero") type="text"
-          .form-group
-            i.small.raleway-light Select up to 4 heroes to showcase on your profile
-            = submit_tag "Add", class: 'btn btn-sm btn-warning float-right'
+          i.small.raleway-light Select up to 4 heroes to showcase on your profile
           .heroes-catalogue.mt-2
             ul#heroList.list-unstyled
-              - Image.where(image_category: "heroes").order(:name).each do |image|
+              - Image.where(id: @user_heroes).order(:name).each do |image|
+                li.mb-2
+                  = check_box_tag 'heroes_image_id[]', image.id, true, class: "checkbox-round"
+                  = image.name
+              - Image.where(image_category: "heroes").where.not(id: @user_heroes).order(:name).each do |image|
                 li.mb-2
                   = check_box_tag 'heroes_image_id[]', image.id, false, class: "checkbox-round"
                   = image.name
+          = submit_tag "Add", class: 'btn btn-block btn-warning card-radius mt-3'
