@@ -1,0 +1,31 @@
+#league-team-details-background-img
+  .container.league-container
+    .row.mb-5
+      .col-md-12.text-center
+        = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
+#team-details-bg.d-flex
+  .container
+    .row.mt-5
+      .col-md-12.text-center
+        h1.league-head-font-weight.text-yellow PARTICIPANTS
+    .row.mt-5
+      .col-md-4
+        = link_to 'PLAYERS', participants_path, type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold'
+        = link_to 'TEAMS', participants_path(team: 'team'), type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
+      .col-md-8
+        .float-right
+          = button_tag "SORT BY: ", type: 'button', class: 'btn btn-sm btn-dark px-4 filter-border-left-radius font-weight-bold', style: "cursor: default;"
+          = link_to 'A - Z', participants_path(sort: true), type: 'button', class: 'btn btn-sm btn-secondary px-4 filter-border-right-radius font-weight-bold'
+    - if @users.present?
+      .row.mt-5
+        - @users.each do |user|
+          = render 'list_user', user: user
+    - else
+      - @teams.each do |team|
+        .row.mt-5
+          .col-md-12.text-center
+            h3.league-head-font-weight.text-glow-yellow = team.name
+        .my-5.horizontal-line-gradient
+        .row
+          - team.users.each do |user|
+            = render 'list_user', user: user
