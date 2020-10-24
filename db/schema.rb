@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_132612) do
+ActiveRecord::Schema.define(version: 2020_10_17_142911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2020_10_05_132612) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "heros", force: :cascade do |t|
+    t.string "name"
+    t.integer "hero_identifier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.integer "image_category"
     t.string "name"
@@ -83,6 +90,10 @@ ActiveRecord::Schema.define(version: 2020_10_05_132612) do
     t.bigint "image_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "games_played"
+    t.decimal "win_rate"
+    t.integer "with_games"
+    t.decimal "with_win"
     t.index ["image_id"], name: "index_profile_images_on_image_id"
     t.index ["user_id"], name: "index_profile_images_on_user_id"
   end
