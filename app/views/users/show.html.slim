@@ -41,33 +41,17 @@
                 br
                 | WIN RATES:
                 br
-                | KDA RATIOS:
+                | WITH GAMES:
                 br
-                | KILLS:
-                br
-                | DEATHS:
-                br
-                | ASSISTS:
-                br
-                | GPM:
-                br
-                | XPM:
+                | WITH WINS:
               .col-4.pl-0.small.text-right.line-height-sm.bold
                 = profile_hero.games_played
                 br
                 = profile_hero.win_rate
                 br
-                | 4.02
+                = profile_hero.with_games
                 br
-                | 11.43
-                br
-                | 5.4
-                br
-                | 8.65
-                br
-                | 527
-                br
-                | 588
+                = profile_hero.with_win
             .montserrat.font-weight-bold.small.stats-margin MOST COMMON ITEMS
             - Image.where(image_category: "common_item").last(6).each do |item|
              = image_tag item.raw_file, class: "w-25 m-1"
