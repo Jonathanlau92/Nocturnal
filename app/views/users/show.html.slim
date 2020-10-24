@@ -32,8 +32,8 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - if @user.images.present?
-      - @user.images.each do |hero|
-        .col.hero-image style="--image: url(#{rails_blob_path(hero.raw_file)});"
+      - @profile_images.each do |profile_hero|
+        .col.hero-image style="--image: url(#{rails_blob_path(profile_hero.image.raw_file)});"
           .hero-stats
             .row.mx-0.montserrat
               .col-8.pr-0.small.text-left.line-height-sm.bold
@@ -41,33 +41,17 @@
                 br
                 | WIN RATES:
                 br
-                | KDA RATIOS:
+                | WITH GAMES:
                 br
-                | KILLS:
-                br
-                | DEATHS:
-                br
-                | ASSISTS:
-                br
-                | GPM:
-                br
-                | XPM:
+                | WITH WINS:
               .col-4.pl-0.small.text-right.line-height-sm.bold
-                | 223
+                = profile_hero.games_played
                 br
-                | 56.4%
+                = profile_hero.win_rate
                 br
-                | 4.02
+                = profile_hero.with_games
                 br
-                | 11.43
-                br
-                | 5.4
-                br
-                | 8.65
-                br
-                | 527
-                br
-                | 588
+                = profile_hero.with_win
             .montserrat.font-weight-bold.small.stats-margin MOST COMMON ITEMS
             - Image.where(image_category: "common_item").last(6).each do |item|
              = image_tag item.raw_file, class: "w-25 m-1"
@@ -88,7 +72,7 @@
                 = image_pack_tag 'media/src/images/Hard Support.png', class: "stats-icon"
                 small 0%
           h3.hero-name
-            = hero.name
+            = profile_hero.image.name
       / If image count is less than 4, display the add hero button to open modal
       - (4 - @user.images.count).times do
         .col.d-flex.justify-content-center.align-items-center.select-hero data-toggle="modal"data-target="#heroModal" data-tooltip="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
