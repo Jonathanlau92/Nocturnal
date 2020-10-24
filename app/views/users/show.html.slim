@@ -32,8 +32,8 @@
   h3.bold.mt-5 FAVOURITE HEROES
   .row.w-75.mx-auto.mt-5
     - if @user.images.present?
-      - @user.images.each do |hero|
-        .col.hero-image style="--image: url(#{rails_blob_path(hero.raw_file)});"
+      - @profile_images.each do |profile_hero|
+        .col.hero-image style="--image: url(#{rails_blob_path(profile_hero.image.raw_file)});"
           .hero-stats
             .row.mx-0.montserrat
               .col-8.pr-0.small.text-left.line-height-sm.bold
@@ -41,33 +41,17 @@
                 br
                 | WIN RATES:
                 br
-                | KDA RATIOS:
+                | WITH GAMES:
                 br
-                | KILLS:
-                br
-                | DEATHS:
-                br
-                | ASSISTS:
-                br
-                | GPM:
-                br
-                | XPM:
+                | WITH WINS:
               .col-4.pl-0.small.text-right.line-height-sm.bold
-                | 223
+                = profile_hero.games_played
                 br
-                | 56.4%
+                = profile_hero.win_rate
                 br
-                | 4.02
+                = profile_hero.with_games
                 br
-                | 11.43
-                br
-                | 5.4
-                br
-                | 8.65
-                br
-                | 527
-                br
-                | 588
+                = profile_hero.with_win
             .montserrat.font-weight-bold.small.stats-margin MOST COMMON ITEMS
             - Image.where(image_category: "common_item").last(6).each do |item|
              = image_tag item.raw_file, class: "w-25 m-1"
@@ -88,7 +72,7 @@
                 = image_pack_tag 'media/src/images/Hard Support.png', class: "stats-icon"
                 small 0%
           h3.hero-name
-            = hero.name
+            = profile_hero.image.name
       / If image count is less than 4, display the add hero button to open modal
       - (4 - @user.images.count).times do
         .col.d-flex.justify-content-center.align-items-center.select-hero data-toggle="modal"data-target="#heroModal" data-tooltip="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
@@ -123,17 +107,43 @@
       | AVG XPM
       br
       .bold 534
-  .card.w-50.mx-auto.mt-5.card-radius
+  .card.w-45.mx-auto.mt-5.card-radius
     .card-header.bg-warning.card-header-radius
       h4.bold.text-dark.mb-0 TEAM OVERVIEW
     .card-body.bg-dark.card-body-radius
-      table.table
-        tbody
-          tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-            td.border-top-0
-              = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-            td.border-top-0.align-middle
-              .text-white Car.Goes.Zoom
+      .input-group
+        .input-group-prepend
+          .input-group-text.bg-secondary.border-0.input-group-border-radius-left
+            i.fa.fa-search.text-muted
+        input#teamSearch.form-control placeholder="Search for your team" type="text"
+      .catalogue.mt-2
+        table.table
+          tbody#teamList
+            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+              td.border-top-0.w-25
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+              td.border-top-0.align-middle.text-left.team-name
+                .text-white Car.Goes.Zoom
+            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+              td.border-top-0.w-25
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+              td.border-top-0.align-middle.text-left.team-name
+                .text-white Team A
+            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+              td.border-top-0.w-25
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+              td.border-top-0.align-middle.text-left.team-name
+                .text-white BANA
+            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+              td.border-top-0.w-25
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+              td.border-top-0.align-middle.text-left.team-name
+                .text-white winla
+            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
+              td.border-top-0.w-25
+                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+              td.border-top-0.align-middle.text-left.team-name
+                .text-white good
 .modal.fade#teamModal role="dialog" tabindex="-1"
   .modal-dialog.modal-width role="document"
     .modal-content.text-center.card-radius
@@ -175,13 +185,22 @@
     .modal-content.card-radius
       .modal-header.bg-warning.card-header-radius
         h4.modal-title.text-dark.bold.mx-auto HERO CATALOGUE
-      .modal-body.bg-dark.card-body-radius.p-5
+      .modal-body.bg-dark.card-body-radius.px-5.py-4
         = form_for(@user, url: user_update_heroes_images_path(@user)) do |f|
-          .form-group
-            i.small.raleway-light Select up to 4 heroes to showcase on your profile
-            = submit_tag "Add", class: 'btn btn-sm btn-warning float-right'
-          .heroes-catalogue.mt-2
-            - Image.where(image_category: "heroes").order(:name).each do |image|
-              .form-group
-                = check_box_tag 'heroes_image_id[]', image.id, false, class: "checkbox-round"
-                = image.name
+          .input-group
+            .input-group-prepend
+              .input-group-text.bg-secondary.border-0.input-group-border-radius-left
+                i.fa.fa-search.text-muted
+            input#heroSearch.form-control placeholder="Search for your hero" type="text"
+          i.small.raleway-light Select up to 4 heroes to showcase on your profile
+          .catalogue.mt-3
+            ul#heroList.list-unstyled
+              - Image.where(id: @user_heroes).order(:name).each do |image|
+                li.mb-2
+                  = check_box_tag 'heroes_image_ids[]', image.id, true, id: image.id, class: "checkbox-round"
+                  = image.name
+              - Image.where(image_category: "heroes").where.not(id: @user_heroes).order(:name).each do |image|
+                li.mb-2
+                  = check_box_tag 'heroes_image_ids[]', image.id, false, id: image.id, class: "checkbox-round"
+                  = image.name
+          = submit_tag "Add", class: 'btn btn-block btn-warning card-radius mt-3'
