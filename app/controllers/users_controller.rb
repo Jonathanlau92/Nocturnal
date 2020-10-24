@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   include Adapter
 
   def show
+    @user_heroes = ProfileImage.where(user: @user).pluck(:image_id)
     @profile_images = @user.profile_images
   end
 
@@ -21,8 +22,9 @@ class UsersController < ApplicationController
   def update_heroes_images
     @user = User.find(params[:user_id])
     @dota_api_call = OpenDota.new(@user)
+    ProfileImage.where(user_id: @user.id).destroy_all
     # Store the images in an array and then assign to user
-    params[:heroes_image_id].each do |hero_image_id|
+    params[:heroes_image_ids].first(4).each do |hero_image_id|
       # Pass in image name to get hero stats
       @hero_stat = @dota_api_call.get_hero_stat(Image.find(hero_image_id).name)
       if @hero_stat.present?
