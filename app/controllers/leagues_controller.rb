@@ -20,6 +20,6 @@ class LeaguesController < ApplicationController
   end
   
   def brackets
-		
-	end
+    @round1_matches = Match.where(round: 1)
+  end
 end

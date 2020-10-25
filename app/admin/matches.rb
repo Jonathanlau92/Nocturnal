@@ -5,7 +5,7 @@ ActiveAdmin.register Match do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :league_id, :team_id, :match_identifier, :score
+  permit_params :league_id, :team_id, :match_identifier, :score, :position, :round
   #
   # or
   #

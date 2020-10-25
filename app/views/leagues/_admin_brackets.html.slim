@@ -3,7 +3,11 @@
     h3.tournament-bracket__round-title ROUND 1
     ul.tournament-bracket__list
       / Need to make this dynamics with database
-      - 16.times do
+      - 16.times do |index|
+        / Find matches where position is equal to the index of the bracket (2x + 1) equation
+        - current_position_match_upper = @round1_matches.find_by(position: (2 * index) + 1)
+        / Lower bracket index is +2 instead of +1
+        - current_position_match_lower = @round1_matches.find_by(position: (2 * index) + 2)
         li.tournament-bracket__item
           .tournament-bracket__match.upper-bracket tabindex="0"
             .row
@@ -12,18 +16,18 @@
                 = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 / team name
-                span.text-warning.font-weight-bold CHICKENS
+                span.text-warning.font-weight-bold = current_position_match_upper.present? ? current_position_match_upper.team.name : 'NIL'
               .col-3
                 / team score
-                .text-center 1
+                .text-center = current_position_match_upper.present? ? current_position_match_upper.score : 'NIL'
           .tournament-bracket__match.lower-bracket tabindex="0"
             .row
               .col-3.pr-0
                 = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
-                span.text-warning.font-weight-bold DROP.IT.HOT
+                span.text-warning.font-weight-bold = current_position_match_lower.present? ? current_position_match_lower.team.name : 'NIL'
               .col-3
-                .text-center 0
+                .text-center = current_position_match_lower.present? ? current_position_match_lower.score : 'NIL'
   .tournament-bracket__round.tournament-bracket__round--best-of-8
     h3.tournament-bracket__round-title ROUND 2
     ul.tournament-bracket__list
