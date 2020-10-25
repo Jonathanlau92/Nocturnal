@@ -1,0 +1,150 @@
+.tournament-bracket.tournament-bracket--rounded
+  .tournament-bracket__round.tournament-bracket__round--best-of-16
+    h3.tournament-bracket__round-title ROUND 1
+    ul.tournament-bracket__list
+      / Need to make this dynamics with database
+      - 16.times do
+        li.tournament-bracket__item
+          .tournament-bracket__match.upper-bracket tabindex="0"
+            .row
+              .col-3.pr-0
+                / team image
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                / team name
+                span.text-warning.font-weight-bold CHICKENS
+              .col-3
+                / team score
+                .text-center 1
+          .tournament-bracket__match.lower-bracket tabindex="0"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold DROP.IT.HOT
+              .col-3
+                .text-center 0
+  .tournament-bracket__round.tournament-bracket__round--best-of-8
+    h3.tournament-bracket__round-title ROUND 2
+    ul.tournament-bracket__list
+      / Need to make this dynamics with database
+      - 8.times do
+        li.tournament-bracket__item
+          .tournament-bracket__match.upper-bracket tabindex="0" class="team_1"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold CHICKENS
+              .col-3
+                .text-center 1
+          .tournament-bracket__match.lower-bracket tabindex="0" class="team_2"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold DROP.IT.HOT
+              .col-3
+                .text-center 0
+  .tournament-bracket__round.tournament-bracket__round--quarterfinals
+    h3.tournament-bracket__round-title ROUND 3
+    ul.tournament-bracket__list
+      - 4.times do
+        li.tournament-bracket__item
+          .tournament-bracket__match.upper-bracket tabindex="0" class="team_1"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold CHICKENS
+              .col-3
+                .text-center 1
+          .tournament-bracket__match.lower-bracket.team tabindex="0" class="team_2"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold DROP.IT.HOT
+              .col-3
+                .text-center 0
+  .tournament-bracket__round.tournament-bracket__round--semifinals
+    h3.tournament-bracket__round-title ROUND 4
+    ul.tournament-bracket__list
+      - 2.times do
+        li.tournament-bracket__item
+          .tournament-bracket__match.upper-bracket tabindex="0"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold CHICKENS
+              .col-3
+                .text-center 1
+          .tournament-bracket__match.lower-bracket tabindex="0"
+            .row
+              .col-3.pr-0
+                = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              .col-6.text-truncate.pl-1.pr-0
+                span.text-warning.font-weight-bold DROP.IT.HOT
+              .col-3
+                .text-center 0
+  .tournament-bracket__round.tournament-bracket__round--finals
+    h3.tournament-bracket__round-title FINALS
+    ul.tournament-bracket__list
+      li.tournament-bracket__item
+        .tournament-bracket__match.upper-bracket tabindex="0"
+          .row
+            .col-3.pr-0
+              = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+            .col-6.text-truncate.pl-1.pr-0
+              span.text-warning.font-weight-bold CHICKENS
+            .col-3
+              .text-center 1
+        .tournament-bracket__match.lower-bracket data-toggle="modal"data-target="#matchModal"tabindex="0"
+          .row
+            .col-3.pr-0
+              = image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+            .col-6.text-truncate.pl-1.pr-0
+              span.text-warning.font-weight-bold DROP.IT.HOT
+            .col-3
+              .text-center 0
+    .modal.fade#matchModal role="dialog" tabindex="-1"
+      .modal-dialog.modal-width role="document"
+        .modal-content.text-center.card-radius
+          .modal-header.bg-warning.card-header-radius
+            h4.modal-title.text-dark.bold.mx-auto MATCH DETAILS
+            / button.close aria-label="Close" data-dismiss="modal" type="button"
+            /   span aria-hidden="true"  &times;
+          .modal-body.bg-dark.card-body-radius.p-4
+            .row.mx-5.px-4.align-items-center
+              .col-4
+                = image_tag(url_for(Image.last.raw_file), size: "35x35", class: "rounded-circle border-yellow")
+                h6.text-warning.bold CHICKENS
+              .col-1
+                h4.text-warning.bold 2
+              .col-2
+                h6 VS
+              .col-1
+                h4.text-muted.bold 1
+              .col-4
+                = image_tag(url_for(Image.last.raw_file), size: "35x35", class: "rounded-circle border-muted")
+                h6.text-muted.bold DROP.IT.HOT
+            .row.mt-4
+              .col.mx-4
+                table.table.bg-secondary.card-radius
+                  tbody
+                    - 5.times do
+                      tr
+                        td.border-bottom.border-dark.text-right width="30%"
+                          = image_tag(url_for(Image.last.raw_file), size: "45x45", class: "rounded-circle border-yellow")
+                        td.border-bottom.border-dark.align-middle
+                          h6.text-warning.text-left.bold.mb-0 Magicx
+              .col.mx-4
+                table.table.bg-secondary.card-radius
+                  tbody
+                    - 5.times do
+                      tr
+                        td.border-bottom.border-dark.text-right width="30%"
+                          = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "45x45", class: "rounded-circle border-muted"
+                        td.border-bottom.border-dark.align-middle
+                          h6.text-muted.text-left.bold.mb-0 Mars.Jupiter
