@@ -21,5 +21,9 @@ class LeaguesController < ApplicationController
   
   def brackets
     @round1_matches = Match.where(round: 1)
+    @round2_matches = Match.where(round: 2)
+    @round3_matches = Match.where(round: 3)
+    @round4_matches = Match.where(round: 4)
+    @round5_matches = Match.where(round: 5)
   end
 end
