@@ -73,7 +73,7 @@ Rails.application.configure do
     :from => "projectnocturnaldev@gmail.com",
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'heroku.com',
+    :domain => 'http://nocturnal-staging.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
