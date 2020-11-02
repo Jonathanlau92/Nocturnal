@@ -2,41 +2,11 @@ $(document).on("turbolinks:load", function() {
   $('[data-tooltip="tooltip"]').tooltip();
 
   if ($('.container').hasClass('league-container')) {
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
     var navbarHeight = $('.main-header').outerHeight();
 
+    $('.main-header').removeClass("sticky-top");
     $(window).scroll(function(event){
-      didScroll = true;
+      $('.subheader').css("top", Math.max(0, navbarHeight - $(window)[0].scrollY));
     });
-
-    setInterval(function() {
-      if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-      }
-    }, 250);
-
-    function hasScrolled() {
-      var st = $(this).scrollTop();
-      
-      // Make sure they scroll more than delta
-      if(Math.abs(lastScrollTop - st) <= delta)
-          return;
-      
-      // If they scrolled down and are past the navbar, add class .nav-up.
-      // This is necessary so you never see what is "behind" the navbar.
-      if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        $('.main-header').removeClass('nav-down').addClass('nav-up');
-      } else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-          $('.main-header').removeClass('nav-up').addClass('nav-down');
-        }
-      }
-      lastScrollTop = st;
-    }
   }
 });
