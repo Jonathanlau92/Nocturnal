@@ -68,10 +68,10 @@
   width: 35%;
 }
 
-.subheader-height {
+.subheader {
   position: fixed;
-  top: 60px;
-  z-index: 1030;
+  z-index: 10;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 // Sequence of events page 3x3 grid row position
