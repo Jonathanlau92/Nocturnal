@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # Calls link_account_from_omniauth method in user model
       if current_user.link_account_from_omniauth(request.env["omniauth.auth"])
         flash[:notice] = "Account successfully linked"
-        redirect_to user_path(current_user) and return
+        redirect_to root_path and return
       end
     end
     # You need to implement the method below in your model (e.g. app/models/user.rb)
