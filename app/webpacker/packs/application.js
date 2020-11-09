@@ -25,3 +25,5 @@ import "@fortawesome/fontawesome-free/js/all";
 // Custom javascript
 require("../src/javascripts/layout");
 require("../src/javascripts/countdown");
+require("../src/javascripts/brackets");
+require("../src/javascripts/search");
