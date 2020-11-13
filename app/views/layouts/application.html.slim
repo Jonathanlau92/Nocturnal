@@ -17,7 +17,7 @@ html
   body
     - unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)
       = render 'layouts/header'
-      = render 'layouts/subheader' if controller_name == 'leagues'
+      = render 'layouts/subheader' if controller_name == 'leagues' or controller_name == "teams"
       = render 'layouts/messages'
     = yield
     - unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)

@@ -1,10 +1,6 @@
 class LeaguesController < ApplicationController
   def index
-    
-  end
-  
-  def team_details
-    
+    @league = League.find_by(current_league: true)
   end
 
   def participants

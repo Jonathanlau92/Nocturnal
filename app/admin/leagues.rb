@@ -5,7 +5,7 @@ ActiveAdmin.register League do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :date, :price, :moderator, :lobby_id, :lobby_password, :discord_link
+  permit_params :title, :date, :price, :moderator, :lobby_id, :lobby_password, :discord_link, :prize_pool
   #
   # or
   #

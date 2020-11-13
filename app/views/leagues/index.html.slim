@@ -6,22 +6,28 @@
     .row.mb-5
       .col-md-4.text-center
         p.font-weight-bold.mb-0 DATE
-        h1.league-head-font-weight.text-white.text-glow-yellow JULY 27
+        h1.league-head-font-weight.text-white.text-glow-yellow = @league.date.strftime("%^b %d")
       .col-md-4.text-center
         p.font-weight-bold.mb-0 PRIZE POOL
-        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size SGD $250
+        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size = "SGD $#{@league.prize_pool.to_i}"
         span.text-white Winner takes it all!
       .col-md-4.text-center
         p.font-weight-bold.mb-0 TIME
-        h1.league-head-font-weight.text-white.text-glow-yellow 8:00pm SGT
+        h1.league-head-font-weight.text-white.text-glow-yellow = "#{@league.date.strftime("%k:%M%P")} SGT"
     .row.mb-2
       .col-md-12.text-center
-        = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+        - if current_user.purchased_pass?
+          = link_to 'Check in', '#', class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+        - else
+          = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
     .row.mb-5
       .col-md-12.text-center
-        span.text-warning.font-weight-bold PURCHASE NOW 
-        span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
-        br
+        - if current_user.purchased_pass?
+          .league-countdown#timer data-league-date="#{@league.date}"
+        - else
+          span.text-warning.font-weight-bold PURCHASE NOW 
+          span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
+          br
         i
           | (Redemption code provided after purchase)
     .row
@@ -90,7 +96,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold"
       span . A reminder will
       br
       span be sent to your email.
@@ -108,7 +114,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold"
       span .
     .col.text-center
       h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
@@ -156,7 +162,7 @@
       .col-md-4.text-center
         h5.league-yellow.bold PASSWORD
         span View 
-        = link_to 'Team Details', team_details_path, class: 'league-yellow bold'
+        = link_to 'Team Details', team_path(current_user.teams[0]), class: 'league-yellow bold'
     .row.mt-4
       .col-md-4.text-center
         h5.league-yellow.bold SPECTATORS

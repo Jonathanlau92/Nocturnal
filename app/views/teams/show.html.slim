@@ -3,7 +3,7 @@
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
-.league-bg.d-flex
+#league-bg.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -13,9 +13,9 @@
         span Welcome to SrF.Gaming
     .my-5.horizontal-line-gradient
     .row
-      - Image.last(5).each do |image|
+      - @team.users.each do |user|
         .col.mx-2
-          = image_tag(url_for(image.raw_file), class: 'heroes-size')
+          = image_tag(url_for(user.images.first.raw_file), class: 'heroes-size') if user.images.present?
     .my-5.horizontal-line-gradient
     .row.mt-5
       .col-md-3
