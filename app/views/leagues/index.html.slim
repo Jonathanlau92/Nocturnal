@@ -6,14 +6,14 @@
     .row.mb-5
       .col-md-4.text-center
         p.font-weight-bold.mb-0 DATE
-        h1.league-head-font-weight.text-white.text-glow-yellow JULY 27
+        h1.league-head-font-weight.text-white.text-glow-yellow = @league.date.strftime("%^b %d")
       .col-md-4.text-center
         p.font-weight-bold.mb-0 PRIZE POOL
-        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size SGD $250
+        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size = "SGD $#{@league.prize_pool.to_i}"
         span.text-white Winner takes it all!
       .col-md-4.text-center
         p.font-weight-bold.mb-0 TIME
-        h1.league-head-font-weight.text-white.text-glow-yellow 8:00pm SGT
+        h1.league-head-font-weight.text-white.text-glow-yellow = "#{@league.date.strftime("%k:%M%P")} SGT"
     .row.mb-2
       .col-md-12.text-center
         = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'

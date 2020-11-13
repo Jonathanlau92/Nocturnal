@@ -1,6 +1,6 @@
 class LeaguesController < ApplicationController
   def index
-    
+    @league = League.find_by(current_league: true)
   end
   
   def team_details
