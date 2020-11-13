@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-repeat: no-repeat;
   background-position: 50% 80%, center top;
   background-image: url("../src/images/Arc warden snap vs.png"),
-    url("../src/images/Compiled Wallpaper.jpg");
+    url("../src/images/Compiled Wallpaper w-o light.jpg");
   background-color: black;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -99,11 +99,18 @@ h1, h2, h3, h4, h5, h6, p {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center top;
-  background-image: url('../src/images/3 Wallpaper.jpg');
+  background-image: url('../src/images/3 Wallpaper - update.jpg');
   background-color: black;
   padding-top: 3%;
   padding-bottom: 4%;
   border-bottom: 1px solid #FDDC56;
+}
+
+.league-requirements-container {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center !important;
 }
 
 .btn-nocturnal {
@@ -153,7 +160,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .dota-2-my {
   margin-top: 1%;
-  margin-bottom: calc(7% - 90px);
+  margin-bottom: calc(8% - 90px);
 }
 
 .league-logo-size {
