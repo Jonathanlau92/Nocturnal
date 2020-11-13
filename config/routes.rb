@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resources :users do
     patch "update_heroes_images", to: 'users#update_heroes_images', as: :update_heroes_images
   end
-  resources :leagues
+  resources :leagues do
+    get 'team-details', to: 'leagues#team_details', as: :team_details
+  end
 
-  get 'team-details', to: 'leagues#team_details', as: :team_details
   get 'brackets', to: 'leagues#brackets', as: :brackets
   get 'participants', to: 'leagues#participants', as: :participants
   get "mission", to: "pages#mission"
