@@ -2,12 +2,8 @@
   .row.align-items-center.justify-content-left.h-100
     .col-sm-3.p-3.form-wrapper.my-5
       .text-center = image_pack_tag 'media/src/images/Logo.png', class: "nocturnal-devise-logo"
-      p.text-center.edit-font-size.mt-3 Add your email and password below
-      = form_for @user do |f|
-        .form-group
-          = f.label :email, 'Email: ', class: 'm-0 devise-font-size'
-          = f.email_field :email, class: 'text-white form-control col-sm-12', required: true
-        .form-group
-          = f.label :password, 'Password: ', class: 'm-0 devise-font-size'
-          = f.password_field :password, autocomplete: "new-password", class: 'text-white form-control col-sm-12'
-        = f.submit 'Submit', class: 'btn btn-sm btn-primary'
+      p.text-center.edit-font-size.mt-3 Link your steam account with us!
+      = link_to user_steam_omniauth_authorize_path, class: 'col-sm-12 mt-3 btn btn-secondary rounded-pill' do
+        = fa_icon 'steam', type: :fab, class: 'logo-size'
+        span.ml-3 Login with steam
+

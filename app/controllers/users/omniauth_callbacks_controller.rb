@@ -3,6 +3,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: :steam
   def steam
+    # Linking existing user to omniauth so that it wont create another user record
+    if user_signed_in?
+      # Calls link_account_from_omniauth method in user model
+      if current_user.link_account_from_omniauth(request.env["omniauth.auth"])
+        flash[:notice] = "Account successfully linked"
+        redirect_to root_path and return
+      end
+    end
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?
