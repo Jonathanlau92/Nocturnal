@@ -4,7 +4,7 @@ class LeaguesController < ApplicationController
   end
   
   def team_details
-    
+    @league = League.find(params[:league_id])
   end
 
   def participants

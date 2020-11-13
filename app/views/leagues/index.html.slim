@@ -96,7 +96,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", league_team_details_path(@league), class: "league-yellow text-decoration-none bold"
       span . A reminder will
       br
       span be sent to your email.
@@ -114,7 +114,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_details_path, class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", league_team_details_path(@league), class: "league-yellow text-decoration-none bold"
       span .
     .col.text-center
       h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
@@ -162,7 +162,7 @@
       .col-md-4.text-center
         h5.league-yellow.bold PASSWORD
         span View 
-        = link_to 'Team Details', team_details_path, class: 'league-yellow bold'
+        = link_to 'Team Details', league_team_details_path(@league), class: 'league-yellow bold'
     .row.mt-4
       .col-md-4.text-center
         h5.league-yellow.bold SPECTATORS

@@ -66,6 +66,10 @@ class User < ApplicationRecord
     return count
   end
 
+  def get_current_league
+    League.find_by(current_league: true)
+  end
+
   def send_welcome_mail
     UserMailer.with(user: self).welcome.deliver_later
   end
