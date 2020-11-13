@@ -16,12 +16,18 @@
         h1.league-head-font-weight.text-white.text-glow-yellow = "#{@league.date.strftime("%k:%M%P")} SGT"
     .row.mb-2
       .col-md-12.text-center
-        = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+        - if current_user.purchased_pass?
+          = link_to 'Check in', '#', class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+        - else
+          = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
     .row.mb-5
       .col-md-12.text-center
-        span.text-warning.font-weight-bold PURCHASE NOW 
-        span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
-        br
+        - if current_user.purchased_pass?
+          .league-countdown#timer data-league-date="#{@league.date}"
+        - else
+          span.text-warning.font-weight-bold PURCHASE NOW 
+          span TO RECEIVE ONE FREE PASS FOR YOU AND A FRIEND
+          br
         i
           | (Redemption code provided after purchase)
     .row
