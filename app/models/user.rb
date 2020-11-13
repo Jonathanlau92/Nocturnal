@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable
+         :recoverable, :rememberable, :confirmable
   devise :omniauthable, omniauth_providers: %i[steam]
  
   has_many :user_teams
@@ -27,8 +27,6 @@ class User < ApplicationRecord
     end
   end
 
-  after_create :send_welcome_mail
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       # authentication key is in devise.rb and it's password instead of email, since steam doesn't provide us the email
@@ -51,9 +49,5 @@ class User < ApplicationRecord
       count += team.leagues.count
     end
     return count
-  end
-
-  def send_welcome_mail
-    UserMailer.with(user: self).welcome.deliver_later
   end
 end
