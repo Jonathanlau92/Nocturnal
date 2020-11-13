@@ -2,10 +2,6 @@ class LeaguesController < ApplicationController
   def index
     @league = League.find_by(current_league: true)
   end
-  
-  def team_details
-    @league = League.find(params[:league_id])
-  end
 
   def participants
     if params[:team].present?

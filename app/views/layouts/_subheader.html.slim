@@ -9,4 +9,4 @@ nav.navbar.navbar-expand-lg.subheader.navbar-dark.w-100.py-0
         = link_to "PARTICIPANTS", participants_path, class: "nav-link font-weight-bold"
       li.nav-item.shadow-yellow.mx-5
         - if current_user.purchased_pass?
-          = link_to "TEAM DETAILS", league_team_details_path(current_user.get_current_league), class: "nav-link font-weight-bold"
+          = link_to "TEAM DETAILS", team_path(current_user.teams[0]), class: "nav-link font-weight-bold"
