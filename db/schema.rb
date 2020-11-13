@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_132645) do
+ActiveRecord::Schema.define(version: 2020_11_13_034433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_132645) do
     t.string "lobby_id"
     t.string "lobby_password"
     t.string "discord_link"
+    t.boolean "current_league", default: false
   end
 
   create_table "matches", force: :cascade do |t|
