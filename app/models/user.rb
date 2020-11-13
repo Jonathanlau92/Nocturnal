@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :confirmable
+         :recoverable, :rememberable, :validatable, :confirmable
   devise :omniauthable, omniauth_providers: %i[steam]
  
   has_many :user_teams
@@ -27,6 +27,8 @@ class User < ApplicationRecord
     end
   end
 
+  validate :password_regex
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       # authentication key is in devise.rb and it's password instead of email, since steam doesn't provide us the email
@@ -34,7 +36,7 @@ class User < ApplicationRecord
       user.country = auth.info['location']
       user.profile_picture = auth.info['image']
       user.steam_id = (auth['uid'].to_i - 76561197960265728).to_s
-    	user.steam_authentication_data = auth.info
+      user.steam_authentication_data = auth.info
       user.password = Devise.friendly_token[0, 20]
       
       # If you are using confirmable and the provider(s) you use validate emails, 
@@ -43,11 +45,29 @@ class User < ApplicationRecord
     end
   end
 
+  def link_account_from_omniauth(auth)
+    self.provider = auth.provider
+    self.uid = auth.uid
+    self.username = auth.info['nickname']
+    self.country = auth.info['location']
+    self.profile_picture = auth.info['image']
+    self.steam_id = (auth['uid'].to_i - 76561197960265728).to_s
+    self.steam_authentication_data = auth.info
+    self.save
+  end
+
   def get_user_league_count
     count = 0
     self.teams.each do |team|
       count += team.leagues.count
     end
     return count
+  end
+
+  private
+
+  def password_regex
+    return if password.blank? || password =~ /\A(?=.*\d)(?=.*[A-Z])(?=.*\W)[^ ]{7,}\z/
+    errors.add :password, 'Password should have more than 7 characters including 1 uppercase letter, 1 number, 1 special character'
   end
 end
