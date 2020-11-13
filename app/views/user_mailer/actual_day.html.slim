@@ -1,0 +1,11 @@
+p
+  | Dear 
+  span = @user.username
+  |,
+p
+  | Please be reminded that 
+  span = @league.title
+  |  will be held today at 
+  span = @league.date.strftime("%I:%M %p")
+  | .
+p Lobby ID and password can be found in the previous email.

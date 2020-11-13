@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
   devise :omniauthable, omniauth_providers: %i[steam]
  
   has_many :user_teams
@@ -28,8 +28,6 @@ class User < ApplicationRecord
   end
 
   validate :password_regex
-
-  after_create :send_welcome_mail
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
@@ -64,10 +62,6 @@ class User < ApplicationRecord
       count += team.leagues.count
     end
     return count
-  end
-
-  def send_welcome_mail
-    UserMailer.with(user: self).welcome.deliver_later
   end
 
   private
