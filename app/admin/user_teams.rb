@@ -20,6 +20,7 @@ ActiveAdmin.register UserTeam do
       f.input :team_id, as: :select, collection: Team.all.map(&:name).uniq
       f.input :captain
     end
+    f.actions
   end
   
 end
