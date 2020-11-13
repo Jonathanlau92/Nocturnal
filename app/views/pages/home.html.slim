@@ -11,58 +11,60 @@
     - else
       = link_to 'Sign in now!', new_user_session_path, class: "btn btn-nocturnal bold"
     p.raleway-light Welcome back, Champion
-.background-img-1#dota-2
-  .text-center
-    = image_pack_tag 'media/src/images/Dota.png', size:"40x40"
-    h4.montserrat.dota-2-my DOTA 2
-    = image_pack_tag 'media/src/images/League Logo Glow.png', class: "league-logo-size"
-    p#timer.text-warning
-    p.mx-auto style="width: 31.3%"
-      | Join this month’s league together with your friends. Dota’s talent, 
-      span.bold xxxxxxxxxx
-      | , will be casting the final Bo3 game. Tune in to our Twitch channel and subscribe.
-    = link_to "VIEW LEAGUE", leagues_path, class: "btn btn-nocturnal mt-2 league-btn-mb"
-    h6.line-height-sm.mb-0.text-glow-white.mt-5 MONTHLY
-    h2.line-height-sm.text-warning.text-glow-yellow.mb-3 LEAGUE
-    p.mx-auto.league-text Reap your rewards through immerging victorious in NOCTURNAL’s monthly league. Engage with passionate individuals, form potential teams and reign triumphant over your competitors. With cash and prizes available, participation enhances your portfolio and amplifies your visibility to professional eSports Teams.
-    .row.mx-auto style="width: 64%"
-      .col.mx-4
-        .text-warning.bold NO TEAM? NO PROBLEM
-        | Our approach grants everyone the opportunity to be within a team. Our manual algorithm allocates you to a team while ensuring balance across your competitors.
-      .col.mx-4
-        .text-warning.bold ENTRANCE FEE
-        | Your experience and enjoyment are our priority. The entrance fee contributes towards the prize pool and the costs of maintaining third party programs on our website.
-    p.mt-5
-      span
-        = link_to "JOIN NOW", leagues_path, class: "text-warning bold"
-      |  TO RECEIVE ONE FREE PASS FOR YOU AND FRIEND!
-      br
-      i.small
-        | (Redemption code provided after purchase)
-.background-img-2#league-requirements
-  .league-requirements-container
-    h6.line-height-sm.mb-0.text-glow-white LEAGUE
-    h2.line-height-sm.text-warning.text-glow-yellow REQUIREMENTS
-    .w-50.mx-auto.px-5.pb-5
-      h6.mt-3
-        span.text-warning.small &#10003;
-        | SYNC YOUR STEAM ACCOUNT TO NOCTURNAL
-      p Syncing with Steam enables a safe and secure experience while allowing organizations to view your wins and merits.
-      h6.mt-5.pt-2
-        span.text-warning.small &#10003;
-        | EXPOSE PUBLIC MATCH DATA
-      p A public profile protects you from smurfs and throwaway accounts. Public match data is necessary for optimal calibration between teams.
-      h6.mt-5.pt-2
-        span.text-warning.small &#10003;
-        | KEEP YOUR CLIENT UP TO DATE
-      p An updated client ensures no delays in the commencement of the League.
-    .row.w-75.mx-auto.mt-5
-      .col
-        h6.text-warning.bold TEAM DETAILS
-        p Team Details are released 3 days prior to the League. Add each other on Steam, choose a Captain, name yourselves and upload a glamorous team logo.
-      .col.mx-0
-        h6.text-warning.bold CHECKING IN
-        p Check In opens 1hr before commencement. This allows us to confirm attendance while performing last minute reshuffles.
-      .col
-        h6.text-warning.bold BREAK TIME
-        p In between matches, a 15min break will be allocated for each team. The Captain can request additional time/lesser time to prepare for the next match from the Mod.
+#dota-2
+  .background-img-1
+    .text-center
+      = image_pack_tag 'media/src/images/Dota.png', size:"40x40"
+      h4.montserrat.dota-2-my DOTA 2
+      = image_pack_tag 'media/src/images/League Logo Glow.png', class: "league-logo-size"
+      p#timer.text-warning
+      p.mx-auto style="width: 31.3%"
+        | Join this month’s league together with your friends. Dota’s talent, 
+        span.bold xxxxxxxxxx
+        | , will be casting the final Bo3 game. Tune in to our Twitch channel and subscribe.
+      = link_to "VIEW LEAGUE", leagues_path, class: "btn btn-nocturnal mt-2 league-btn-mb"
+      h6.line-height-sm.mb-0.text-glow-white.mt-5 MONTHLY
+      h2.line-height-sm.text-warning.text-glow-yellow.mb-3 LEAGUE
+      p.mx-auto.league-text Reap your rewards through immerging victorious in NOCTURNAL’s monthly league. Engage with passionate individuals, form potential teams and reign triumphant over your competitors. With cash and prizes available, participation enhances your portfolio and amplifies your visibility to professional eSports Teams.
+      .row.mx-auto style="width: 64%"
+        .col.mx-4
+          .text-warning.bold NO TEAM? NO PROBLEM
+          | Our approach grants everyone the opportunity to be within a team. Our manual algorithm allocates you to a team while ensuring balance across your competitors.
+        .col.mx-4
+          .text-warning.bold ENTRANCE FEE
+          | Your experience and enjoyment are our priority. The entrance fee contributes towards the prize pool and the costs of maintaining third party programs on our website.
+      p.mt-5
+        span
+          = link_to "JOIN NOW", leagues_path, class: "text-warning bold"
+        |  TO RECEIVE ONE FREE PASS FOR YOU AND FRIEND!
+        br
+        i.small
+          | (Redemption code provided after purchase)
+#league-requirements
+  .background-img-2
+    .league-requirements-container
+      h6.line-height-sm.mb-0.text-glow-white LEAGUE
+      h2.line-height-sm.text-warning.text-glow-yellow REQUIREMENTS
+      .w-50.mx-auto.px-5.pb-5
+        h6.mt-3
+          span.text-warning.small &#10003;
+          | SYNC YOUR STEAM ACCOUNT TO NOCTURNAL
+        p Syncing with Steam enables a safe and secure experience while allowing organizations to view your wins and merits.
+        h6.mt-5.pt-2
+          span.text-warning.small &#10003;
+          | EXPOSE PUBLIC MATCH DATA
+        p A public profile protects you from smurfs and throwaway accounts. Public match data is necessary for optimal calibration between teams.
+        h6.mt-5.pt-2
+          span.text-warning.small &#10003;
+          | KEEP YOUR CLIENT UP TO DATE
+        p An updated client ensures no delays in the commencement of the League.
+      .row.w-75.mx-auto.mt-5
+        .col
+          h6.text-warning.bold TEAM DETAILS
+          p Team Details are released 3 days prior to the League. Add each other on Steam, choose a Captain, name yourselves and upload a glamorous team logo.
+        .col.mx-0
+          h6.text-warning.bold CHECKING IN
+          p Check In opens 1hr before commencement. This allows us to confirm attendance while performing last minute reshuffles.
+        .col
+          h6.text-warning.bold BREAK TIME
+          p In between matches, a 15min break will be allocated for each team. The Captain can request additional time/lesser time to prepare for the next match from the Mod.
