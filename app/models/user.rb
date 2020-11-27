@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   enum status: { no_pass: 0, purchased_pass: 1 }
   enum position: { hard_support: 0, soft_support: 1, offlane: 2, safe_lane: 3, mid_lane:4 }
+  enum country: { indonesia: 0, vietnam: 1, thailand: 2, philippines: 3, malaysia: 4, singapore: 5 }
 
   aasm column: :status, enum: true do
     state :no_pass, initial: true
