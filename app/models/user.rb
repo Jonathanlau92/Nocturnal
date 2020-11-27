@@ -34,7 +34,6 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       # authentication key is in devise.rb and it's password instead of email, since steam doesn't provide us the email
       user.username = auth.info['nickname']
-      user.country = auth.info['location']
       user.profile_picture = auth.info['image']
       user.steam_id = (auth['uid'].to_i - 76561197960265728).to_s
       user.steam_authentication_data = auth.info
@@ -50,7 +49,6 @@ class User < ApplicationRecord
     self.provider = auth.provider
     self.uid = auth.uid
     self.username = auth.info['nickname']
-    self.country = auth.info['location']
     self.profile_picture = auth.info['image']
     self.steam_id = (auth['uid'].to_i - 76561197960265728).to_s
     self.steam_authentication_data = auth.info
