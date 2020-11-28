@@ -63,6 +63,11 @@ class User < ApplicationRecord
     return count
   end
 
+  def check_league_date(league)
+    # Check if current date is 3 days before league. If it is, then open enable team details
+    return true if Date.current < (league.date - 3.days)
+  end
+
   private
 
   def password_regex

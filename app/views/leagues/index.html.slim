@@ -17,7 +17,7 @@
     .row.mb-2
       .col-md-12.text-center
         - if current_user.purchased_pass?
-          = link_to 'Check in', '#', class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
+          = link_to 'Checked in', '#', class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
         - else
           = link_to 'PURCHASE $5 PASS', checkout_create_path, remote: true, method: :post, class: 'col-sm-3 py-3 btn btn-warning rounded-pill purchase-pass montserrat'
     .row.mb-5
@@ -34,7 +34,7 @@
       .col-md-12.text-center
         = image_tag(current_user.images[0].raw_file, class: 'user-circle') if @registered_users.present?
         - @registered_users.each do |user|
-          = image_tag(user.image[0].raw_file, class: 'users-circle') if user.images.present?
+          = image_tag(user.images[0].raw_file, class: 'users-circle') if user.images.present?
         .users-circle.bg-warning
           span.users-count = "+#{@registered_users.length}"
         p.mb-0 Registered players:

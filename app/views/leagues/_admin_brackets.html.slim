@@ -13,7 +13,7 @@
             .row
               .col-3.pr-0
                 / team image => check for match. If matched, take the team's last member's first image as the team image since there is no way to upload team images!
-                = current_position_match_upper_1.present? ? image_tag(current_position_match_upper_1.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_upper_1.present? and current_position_match_upper_1.team.users.last.images[0].present?) ? image_tag(current_position_match_upper_1.team.users.last.images[0]&.raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 / team name
                 span.text-warning.font-weight-bold = current_position_match_upper_1.present? ? current_position_match_upper_1.team.name : 'TEAM'
@@ -23,7 +23,7 @@
           .tournament-bracket__match.lower-bracket tabindex="0"
             .row
               .col-3.pr-0
-                = current_position_match_lower_1.present? ? image_tag(current_position_match_lower_1.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_lower_1.present? and current_position_match_lower_1.team.users.last.images[0].present?) ? image_tag(current_position_match_lower_1.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_lower_1.present? ? current_position_match_lower_1.team.name : 'TEAM'
               .col-3
@@ -41,7 +41,7 @@
           .tournament-bracket__match.upper-bracket tabindex="0" class="team_1"
             .row
               .col-3.pr-0
-                = current_position_match_upper_2.present? ? image_tag(current_position_match_upper_2.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_upper_2.present? and current_position_match_upper_2.team.users.last.images[0].present?) ? image_tag(current_position_match_upper_2.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 / team name
                 span.text-warning.font-weight-bold = current_position_match_upper_2.present? ? current_position_match_upper_2.team.name : 'TEAM'
@@ -50,7 +50,7 @@
           .tournament-bracket__match.lower-bracket tabindex="0" class="team_2"
             .row
               .col-3.pr-0
-                = current_position_match_lower_2.present? ? image_tag(current_position_match_lower_2.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_lower_2.present? and current_position_match_lower_2.team.users.last.images[0].present?) ? image_tag(current_position_match_lower_2.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_lower_2.present? ? current_position_match_lower_2.team.name : 'TEAM'
               .col-3
@@ -67,7 +67,7 @@
           .tournament-bracket__match.upper-bracket tabindex="0" class="team_1"
             .row
               .col-3.pr-0
-                = current_position_match_upper_3.present? ? image_tag(current_position_match_upper_3.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_upper_3.present? and current_position_match_upper_3.team.users.last.images[0].present?) ? image_tag(current_position_match_upper_3.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_upper_3.present? ? current_position_match_upper_3.team.name : 'TEAM'
               .col-3
@@ -75,7 +75,7 @@
           .tournament-bracket__match.lower-bracket.team tabindex="0" class="team_2"
             .row
               .col-3.pr-0
-                = current_position_match_lower_3.present? ? image_tag(current_position_match_lower_3.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_lower_3.present? and current_position_match_lower_3.team.users.last.images[0].present?) ? image_tag(current_position_match_lower_3.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_lower_3.present? ? current_position_match_lower_3.team.name : 'TEAM'
               .col-3
@@ -92,7 +92,7 @@
           .tournament-bracket__match.upper-bracket tabindex="0"
             .row
               .col-3.pr-0
-                = current_position_match_upper_4.present? ? image_tag(current_position_match_upper_4.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_upper_4.present? and current_position_match_upper_4.team.users.last.images[0].present?) ? image_tag(current_position_match_upper_4.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_upper_4.present? ? current_position_match_upper_4.team.name : 'TEAM'
               .col-3
@@ -100,7 +100,7 @@
           .tournament-bracket__match.lower-bracket tabindex="0"
             .row
               .col-3.pr-0
-                = current_position_match_lower_4.present? ? image_tag(current_position_match_lower_4.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+                = (current_position_match_lower_4.present? and current_position_match_lower_4.team.users.last.images[0].present?) ? image_tag(current_position_match_lower_4.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
               .col-6.text-truncate.pl-1.pr-0
                 span.text-warning.font-weight-bold = current_position_match_lower_4.present? ? current_position_match_lower_4.team.name : 'TEAM'
               .col-3
@@ -116,7 +116,7 @@
         .tournament-bracket__match.upper-bracket tabindex="0"
           .row
             .col-3.pr-0
-              = current_position_match_upper_5.present? ? image_tag(current_position_match_upper_5.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              = (current_position_match_upper_5.present? and current_position_match_upper_5.team.users.last.images[0].present?) ? image_tag(current_position_match_upper_5.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
             .col-6.text-truncate.pl-1.pr-0
               span.text-warning.font-weight-bold = current_position_match_upper_5.present? ? current_position_match_upper_5.team.name : 'TEAM'
             .col-3
@@ -124,7 +124,7 @@
         .tournament-bracket__match.lower-bracket data-toggle="modal"data-target="#matchModal"tabindex="0"
           .row
             .col-3.pr-0
-              = current_position_match_lower_5.present? ? image_tag(current_position_match_lower_5.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
+              = (current_position_match_lower_5.present? and current_position_match_lower_5.team.users.last.images[0].present?) ? image_tag(current_position_match_lower_5.team.users.last.images[0].raw_file, class: 'team-circle') : image_tag(url_for(Image.last.raw_file), class: 'team-circle')
             .col-6.text-truncate.pl-1.pr-0
               span.text-warning.font-weight-bold = current_position_match_lower_5.present? ? current_position_match_lower_5.team.name : 'TEAM'
             .col-3
