@@ -10,3 +10,17 @@
 .edit-font-size {
 	font-size: 15px;
 }
+
+// Red dot in top right corner of empty cards
+.dot {
+  height: 10%;
+  width: 15%;
+  border-radius: 100%;
+  background: red;
+  position: absolute;
+}
+
+.righttop {
+  right: -5%;
+  top: -5%;
+}

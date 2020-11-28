@@ -76,10 +76,12 @@
       / If image count is less than 4, display the add hero button to open modal
       - (4 - @user.images.count).times do
         .col.d-flex.justify-content-center.align-items-center.select-hero data-toggle="modal"data-target="#heroModal" data-tooltip="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
+          .dot.righttop
           i.fa.fa-3x.fa-plus.text-muted
     - else
       - 4.times
         .col.d-flex.justify-content-center.align-items-center.select-hero data-toggle="modal"data-target="#heroModal" data-tooltip="tooltip" data-placement="bottom" title="Select the hero you would like to showcase"
+          .dot.righttop
           i.fa.fa-3x.fa-plus.text-muted    
   h3.bold.mt-5 LEAGUE STATISTICS
   .row.w-75.mx-auto.mt-4
