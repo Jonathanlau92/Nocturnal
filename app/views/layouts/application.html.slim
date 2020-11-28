@@ -4,6 +4,7 @@ html
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
     title Nocturnal
+    link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'stylesheets'
@@ -19,6 +20,13 @@ html
       = render 'layouts/header'
       = render 'layouts/subheader' if controller_name == 'leagues' or controller_name == "teams"
       = render 'layouts/messages'
+    .icon-bar
+      a.facebook href="#" 
+        i.fab.fa-facebook
+      a.instagram href="#" 
+        i.fab.fa-instagram
+      a.twitter href="#" 
+        i.fab.fa-twitter-square
     = yield
     - unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)
       = render 'layouts/footer'
