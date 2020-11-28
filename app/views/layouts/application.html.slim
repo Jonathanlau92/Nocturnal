@@ -21,12 +21,14 @@ html
       = render 'layouts/subheader' if controller_name == 'leagues' or controller_name == "teams"
       = render 'layouts/messages'
     .icon-bar
-      a.facebook href="#" 
+      a.facebook target="_blank" href="https://www.facebook.com/gaming/NctrnlEsports/" 
         i.fab.fa-facebook
-      a.instagram href="#" 
+      a.instagram target="_blank" href="https://www.instagram.com/nctrnl.esports/" 
         i.fab.fa-instagram
-      a.twitter href="#" 
+      a.twitter target="_blank" href="https://twitter.com/NctrnlEsports" 
         i.fab.fa-twitter-square
+      a.twitter target="_blank" href="https://www.twitch.tv/nctrnlesports" 
+        i.fab.fa-twitch
     = yield
     - unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)
       = render 'layouts/footer'
