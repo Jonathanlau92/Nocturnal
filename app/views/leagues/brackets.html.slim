@@ -8,7 +8,4 @@
     .text-center
       h3.league-yellow.bold BRACKETS
       p.w-50.mx-auto.mb-5 View your opposing team for this month's league. Opponents are subject to change and will be updated on this page.
-    - if current_user.superadmin?
-      = render 'admin_brackets'
-    - else
-      = render 'brackets'
+    = render 'admin_brackets'

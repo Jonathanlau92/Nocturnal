@@ -29,10 +29,10 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.py-0.main-h
       li.nav-item.dropdown.my-auto
         a.nav-link.profile-logo href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
           - if current_user.steam_authentication_data.present?
-            span.mr-2 = current_user.steam_authentication_data['nickname']
-            span = image_tag(current_user.steam_authentication_data['image'], class: 'profile-circle')
+            span.mr-2.user-profile-yellow = current_user.steam_authentication_data['nickname']
+            = image_tag(current_user.steam_authentication_data['image'], class: 'profile-circle')
           - else
-            span.mr-2 = current_user.username
+            span.mr-2.user-profile-yellow = current_user.username
         .dropdown-menu.bg-dark
           .dropdown-item.bg-dark
             = link_to "Profile", user_path(current_user), class: "nav-link"

@@ -3,7 +3,7 @@
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
-#league-bg.d-flex
+.league-bg.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -14,8 +14,12 @@
     .my-5.horizontal-line-gradient
     .row
       - @team.users.each do |user|
-        .col.mx-2
-          = image_tag(url_for(user.images.first.raw_file), class: 'heroes-size') if user.images.present?
+        .col-md-2.mx-3.my-3
+          = user.images.present? ? (image_tag(url_for(user.images.first.raw_file), class: 'heroes-size')) : (image_pack_tag 'media/src/images/Registration.jpg', class: 'heroes-size')
+          / Check if current_user is user. If it is, then put glowing yellow border, else put white growing border
+          = user.profile_picture.present? ? (image_tag(url_for(user.profile_picture), class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])) : (image_pack_tag 'media/src/images/Registration.jpg', class: ["image-overlay", current_user == user ? "glowing-border-for-current-user" : "glowing-border-for-other-user"])
+          / to account for long name
+          span.name-overlay = user.username.first(6)
     .my-5.horizontal-line-gradient
     .row.mt-5
       .col-md-3

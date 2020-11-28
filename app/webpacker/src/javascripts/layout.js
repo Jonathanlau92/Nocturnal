@@ -9,4 +9,8 @@ $(document).on("turbolinks:load", function() {
       $('.subheader').css("top", Math.max(0, navbarHeight - $(window)[0].scrollY));
     });
   }
+
+  setTimeout(function(){
+    $('.flash-messages').slideUp(500);
+  }, 2000);
 });

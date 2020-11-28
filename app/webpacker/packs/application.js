@@ -27,3 +27,4 @@ require("../src/javascripts/layout");
 require("../src/javascripts/countdown");
 require("../src/javascripts/brackets");
 require("../src/javascripts/search");
+require("../src/javascripts/validate_checkboxes");
