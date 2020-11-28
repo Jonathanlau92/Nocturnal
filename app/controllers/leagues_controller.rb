@@ -1,6 +1,7 @@
 class LeaguesController < ApplicationController
   def index
     @league = League.find_by(current_league: true)
+    @registered_users = User.where(status: "purchased_pass")
   end
 
   def participants

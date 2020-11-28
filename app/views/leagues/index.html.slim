@@ -6,14 +6,14 @@
     .row.mb-5
       .col-md-4.text-center
         p.font-weight-bold.mb-0 DATE
-        h1.league-head-font-weight.text-white.text-glow-yellow = @league.date.strftime("%^b %d")
+        h1.league-head-font-weight.text-white.text-glow-yellow = @league.present? ? @league.date.strftime("%^b %d") : "No league yet!"
       .col-md-4.text-center
         p.font-weight-bold.mb-0 PRIZE POOL
-        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size = "SGD $#{@league.prize_pool.to_i}"
+        h1.league-head-font-weight.text-white.text-glow-yellow.prize-pool-size = @league.present? ? "SGD $#{@league.prize_pool.to_i}" : "No league yet!"
         span.text-white Winner takes it all!
       .col-md-4.text-center
         p.font-weight-bold.mb-0 TIME
-        h1.league-head-font-weight.text-white.text-glow-yellow = "#{@league.date.strftime("%k:%M%P")} SGT"
+        h1.league-head-font-weight.text-white.text-glow-yellow = @league.present? ? "#{@league.date.strftime("%k:%M%P")} SGT" : "No league yet!"
     .row.mb-2
       .col-md-12.text-center
         - if current_user.purchased_pass?
@@ -32,16 +32,13 @@
           | (Redemption code provided after purchase)
     .row
       .col-md-12.text-center
-        - if true #condition where user has registered
-          = image_tag(Image.first.raw_file, class: 'user-circle')
-        - else
-          = image_tag(Image.first.raw_file, class: 'user-circle')
-        - Image.last(4).each do |image|
-          = image_tag(image.raw_file, class: 'users-circle')
+        = image_tag(current_user.images[0].raw_file, class: 'user-circle') if @registered_users.present?
+        - @registered_users.each do |user|
+          = image_tag(user.image[0].raw_file, class: 'users-circle') if user.images.present?
         .users-circle.bg-warning
-          span.users-count +94
+          span.users-count = "+#{@registered_users.length}"
         p.mb-0 Registered players:
-        h5.bold.text-warning 99
+        h5.bold.text-warning = @registered_users.length
 #league-detail-background.d-flex
   .container
     .row.mt-5
@@ -96,7 +93,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold" if @league.present? and current_user.teams.present?
       span . A reminder will
       br
       span be sent to your email.
@@ -114,7 +111,7 @@
       br
       span under 
       span
-        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold"
+        = link_to "Team Details", team_path(current_user.teams[0]), class: "league-yellow text-decoration-none bold" if @league.present? and current_user.teams.present?
       span .
     .col.text-center
       h5.soe-category-title-size.league-yellow.font-weight-bold LEAGUE STARTS @ 8:00PM SGT
@@ -162,7 +159,7 @@
       .col-md-4.text-center
         h5.league-yellow.bold PASSWORD
         span View 
-        = link_to 'Team Details', team_path(current_user.teams[0]), class: 'league-yellow bold'
+        = link_to 'Team Details', team_path(current_user.teams[0]), class: 'league-yellow bold' if @league.present? and current_user.teams.present?
     .row.mt-4
       .col-md-4.text-center
         h5.league-yellow.bold SPECTATORS
