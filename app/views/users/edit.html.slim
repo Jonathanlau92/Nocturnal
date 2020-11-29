@@ -11,6 +11,10 @@
             = f.label :country, 'COUNTRY',  class: 'm-0 devise-font-size'
             br/
             = f.select :country, User.countries.map { |key, value| [key.titleize, key] }, {include_blank: true}, class: 'form-control text-white'
+          .field
+            = f.label :position, 'POSITION',  class: 'm-0 devise-font-size'
+            br/
+            = f.select :position, User.positions.map { |key, value| [key.titleize, key] }, {include_blank: true}, class: 'form-control text-white'
           .devise-font-size.mt-3 HEROES
           .input-group
             .input-group-prepend
