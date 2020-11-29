@@ -17,7 +17,7 @@ namespace :scheduler do
       if (l.date.to_date - Date.current).to_i == 3
         l.teams.each do |t|
           t.users.each do |u|
-            UserMailer.check_in(l, t, u).deliver_now
+            UserMailer.check_in(u).deliver_now
           end
         end
       end
@@ -29,7 +29,7 @@ namespace :scheduler do
       if l.date.to_date == Date.current
         l.teams.each do |t|
           t.users.each do |u|
-            UserMailer.actual_day(l, u).deliver_now
+            UserMailer.actual_day(u).deliver_now
           end
         end
       end

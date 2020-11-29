@@ -1,28 +1,30 @@
 class UserMailer < ApplicationMailer
   default from: "projectnocturnaldev@gmail.com"
 
+  def welcome(user)
+    @user = user
+    mail(to: @user.email, subject: 'Registration Confirmation')
+  end
+
   def purchase_confirmation(user)
     @user = user
-    mail(to: @user.email, subject: 'Thank you for your purchase')
+    mail(to: @user.email, subject: 'Purchase Confirmation')
   end
 
   def team_details(league, team, user)
     @league = league
-    @team = team
+    @members = team.users.where.not(email: user.email)
     @user = user
-    mail(to: @user.email, subject: 'Team details are out!')
+    mail(to: @user.email, subject: 'Team Information Released')
   end
 
-  def check_in(league, team, user)
-    @league = league
-    @team = team
+  def check_in(user)
     @user = user
-    mail(to: @user.email, subject: 'Check in details')
+    mail(to: @user.email, subject: 'Check-In Reminder')
   end
 
-  def actual_day(league, user)
-    @league = league
+  def actual_day(user)
     @user = user
-    mail(to: @user.email, subject: 'League day reminder')
+    mail(to: @user.email, subject: 'League Reminder')
   end
 end

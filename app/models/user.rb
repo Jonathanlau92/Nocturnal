@@ -68,6 +68,11 @@ class User < ApplicationRecord
     return true if Date.current < (league.date - 3.days)
   end
 
+  # Override Devise::Confirmable#after_confirmation
+  def after_confirmation
+    UserMailer.welcome(self).deliver_later
+  end
+
   private
 
   def password_regex
