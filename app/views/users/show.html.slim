@@ -3,7 +3,7 @@
     = @user.profile_picture.present? ? (image_tag(url_for(@user.profile_picture), size: "240x240", class: "rounded-circle border-yellow-glow")): (image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "240x240", class: "rounded-circle border-yellow-glow")
     h1.text-uppercase.bold.text-warning.mt-4
       = @user.username
-.jumbotron.jumbotron-fluid.text-center.my-0 style="background-image: url(#{asset_pack_path 'media/src/images/sequence-of-event.jpg'}); background-size: 100%; background-attachment: fixed; background-position: top;"
+.jumbotron.jumbotron-fluid.text-center.my-0 style="background-image: url(#{asset_pack_path 'media/src/images/sequence-of-event.jpg'}); background-size: 100%;"
   .row.w-75.mx-auto
     .col
       | NAME
