@@ -1,9 +1,46 @@
-.container-fluid#edit-authentication
-  .row.align-items-center.justify-content-left.h-100
-    .col-sm-3.p-3.form-wrapper.my-5
-      .text-center = image_pack_tag 'media/src/images/Logo.png', class: "nocturnal-devise-logo"
-      p.text-center.edit-font-size.mt-3 Link your steam account with us!
-      = link_to user_steam_omniauth_authorize_path, class: 'col-sm-12 mt-3 btn btn-secondary rounded-pill' do
-        = fa_icon 'steam', type: :fab, class: 'logo-size'
-        span.ml-3 Login with steam
+- if @user.steam_id.present?
+  .container-fluid#registration-background
+    .row.py-5
+      .col-sm-3.p-3.form-wrapper
+        = form_for(@user, url: user_path) do |f|
+          .field
+            = f.label :age, 'AGE',  class: 'm-0 devise-font-size'
+            br/
+            = f.number_field :age, class: 'text-white form-control'
+          .field
+            = f.label :country, 'COUNTRY',  class: 'm-0 devise-font-size'
+            br/
+            = f.select :country, User.countries.map { |key, value| [key.titleize, key] }, {include_blank: true}, class: 'form-control text-white'
+          .field
+            = f.label :position, 'POSITION',  class: 'm-0 devise-font-size'
+            br/
+            = f.select :position, User.positions.map { |key, value| [key.titleize, key] }, {include_blank: true}, class: 'form-control text-white'
+          .devise-font-size.mt-3 HEROES
+          .input-group
+            .input-group-prepend
+              .input-group-text.bg-secondary.border-0.input-group-border-radius-left
+                i.fa.fa-search.text-muted
+            input#heroSearch.form-control placeholder="Search for your hero" type="text"
+          i.small.raleway-light Select up to 4 heroes to showcase on your profile
+          .catalogue.m-3.text-left
+            ul#heroList.list-unstyled
+              - Image.where(id: @user_heroes).order(:name).each do |image|
+                li.mb-2
+                  = check_box_tag 'heroes_image_ids[]', image.id, true, id: image.id, class: "checkbox-round checkbox-form"
+                  = image.name
+              - Image.where(image_category: "heroes").where.not(id: @user_heroes).order(:name).each do |image|
+                li.mb-2
+                  = check_box_tag 'heroes_image_ids[]', image.id, false, id: image.id, class: "checkbox-round checkbox-form"
+                  = image.name
+          .actions.mt-3
+            = f.submit "Save", class: ' w-100 mt-3 btn btn-warning rounded-pill'
+- else
+  .container-fluid#edit-authentication
+    .row.align-items-center.justify-content-left.h-100
+      .col-sm-3.p-3.form-wrapper.my-5
+        .text-center = image_pack_tag 'media/src/images/Logo.png', class: "nocturnal-devise-logo"
+        p.text-center.edit-font-size.mt-3 Link your steam account with us!
+        = link_to user_steam_omniauth_authorize_path, class: 'col-sm-12 mt-3 btn btn-secondary rounded-pill' do
+          = fa_icon 'steam', type: :fab, class: 'logo-size'
+          span.ml-3 Login with steam
 
