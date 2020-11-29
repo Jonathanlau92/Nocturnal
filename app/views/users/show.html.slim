@@ -121,67 +121,52 @@
       .catalogue.mt-2
         table.table
           tbody#teamList
-            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-              td.border-top-0.w-25
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-              td.border-top-0.align-middle.text-left.team-name
-                .text-white Car.Goes.Zoom
-            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-              td.border-top-0.w-25
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-              td.border-top-0.align-middle.text-left.team-name
-                .text-white Team A
-            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-              td.border-top-0.w-25
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-              td.border-top-0.align-middle.text-left.team-name
-                .text-white BANA
-            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-              td.border-top-0.w-25
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-              td.border-top-0.align-middle.text-left.team-name
-                .text-white winla
-            tr data-toggle="modal" data-target="#teamModal" style="cursor: pointer"
-              td.border-top-0.w-25
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-              td.border-top-0.align-middle.text-left.team-name
-                .text-white good
-.modal.fade#teamModal role="dialog" tabindex="-1"
-  .modal-dialog.modal-width role="document"
-    .modal-content.text-center.card-radius
-      .modal-header.bg-warning.card-header-radius
-        h4.modal-title.text-dark.bold.mx-auto TEAM DETAILS
-        / button.close aria-label="Close" data-dismiss="modal" type="button"
-        /   span aria-hidden="true"  &times;
-      .modal-body.bg-dark.card-body-radius.p-4
-        = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
-        h6.text-white Car.Goes.Zoom
-        .row
-          .col
-            | Leagues
-            br
-            .bold 3 Participated
-          .col
-            | Total matches
-            br
-            .bold 8 Matches
-          .col
-            | Wins
-            br
-            .bold 5 Wins
-          .col
-            | Earning
-            br
-            .bold $250
-        table.table.bg-secondary.mx-auto.my-4.card-radius style="width: 95%"
-          tbody
-            tr
-              td.border-top-0 width="15%"
-                = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "50x50", class: "rounded-circle text-left border-yellow"
-              td.border-top-0.align-middle
-                .text-white.text-left Kael.66
-              td.border-top-0.align-middle
-                .text-white.text-right Mid Lane
+            - @user.teams.each do |team|
+              tr data-toggle="modal" data-target="#teamModal#{team.id.to_s}" style="cursor: pointer;"
+                td.border-top-0.w-25
+                  = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+                td.border-top-0.align-middle.text-left.team-name
+                  .text-white
+                    = team.name
+- @user.teams.each do |team|                  
+  .modal.fade role="dialog" tabindex="-1" id="teamModal#{team.id.to_s}"
+    .modal-dialog.modal-width role="document"
+      .modal-content.text-center.card-radius
+        .modal-header.bg-warning.card-header-radius
+          h4.modal-title.text-dark.bold.mx-auto TEAM DETAILS
+          / button.close aria-label="Close" data-dismiss="modal" type="button"
+          /   span aria-hidden="true"  &times;
+        .modal-body.bg-dark.card-body-radius.p-4
+          = image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "80x80", class: "rounded-circle border-white"
+          h6.text-white Car.Goes.Zoom
+          .row
+            .col
+              | Leagues
+              br
+              .bold 3 Participated
+            .col
+              | Total matches
+              br
+              .bold 8 Matches
+            .col
+              | Wins
+              br
+              .bold 5 Wins
+            .col
+              | Earning
+              br
+              .bold $250
+          table.table.bg-secondary.mx-auto.my-4.card-radius style="width: 95%"
+            tbody
+              - team.users.each do |user|
+                tr
+                  td.border-top-0 width="15%"
+                    = user.profile_picture.present? ? (image_tag(url_for(user.profile_picture), size: "50x50", class: "rounded-circle text-left border-yellow")): (image_pack_tag 'media/src/images/Dire Ancient.jpg', size: "50x50", class: "rounded-circle text-left border-yellow")
+                  td.border-top-0.align-middle
+                    .text-white.text-left
+                      = user.username
+                  td.border-top-0.align-middle
+                    .text-white.text-right Mid Lane
 .modal.fade#heroModal role="dialog" tabindex="-1"
   .modal-dialog role="document"
     .modal-content.card-radius
