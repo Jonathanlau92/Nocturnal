@@ -4,10 +4,6 @@
       .col-sm-3.p-3.form-wrapper
         = form_for(@user, url: user_path) do |f|
           .field
-            = f.label :username, 'USERNAME',  class: 'm-0 devise-font-size'
-            br/
-            = f.text_field :username, class: 'text-white form-control'
-          .field
             = f.label :age, 'AGE',  class: 'm-0 devise-font-size'
             br/
             = f.number_field :age, class: 'text-white form-control'
