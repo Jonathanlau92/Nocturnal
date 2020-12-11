@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #fddc56 !important;
 }
 
+.btn-warning:hover {
+  background-color: #ffe680 !important;
+}
+
 .montserrat {
   font-family: "Montserrat";
 }
@@ -125,6 +129,10 @@ h1, h2, h3, h4, h5, h6, p {
   color: black;
   background-color: #fddc56;
   font-family: "Montserrat";
+}
+
+.btn-nocturnal:hover {
+  background-color: #ffe680;
 }
 
 .line-height-sm {
