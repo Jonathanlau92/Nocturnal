@@ -25,7 +25,7 @@ class CheckoutController < ApplicationController
     if params[:session_id]
       flash[:notice] = "Thanks for your purchasing nocturnal pass. See you!"
       UserMailer.purchase_confirmation(current_user).deliver_later
-      redirect_to root_path
+      redirect_to leagues_path
     else
       flash[:error] = "Session expired error"
       redirect_to root_path

@@ -32,7 +32,7 @@
           | (Redemption code provided after purchase)
     .row
       .col-md-12.text-center
-        = image_tag(current_user.images[0].raw_file, class: 'user-circle') if @registered_users.present?
+        = image_tag(current_user.images[0].raw_file, class: 'user-circle') if @registered_users.present? and current_user.images.present?
         - @registered_users.each do |user|
           = image_tag(user.images[0].raw_file, class: 'users-circle') if user.images.present?
         .users-circle.bg-warning
@@ -89,7 +89,7 @@
       h5.soe-category-title-size.league-yellow.font-weight-bold VIEW TEAM DETAILS
       span Get to know your team.
       br
-      span Released 3 days prior to league 
+      span Released 3 weeks prior to league 
       br
       span under 
       span
