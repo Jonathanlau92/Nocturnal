@@ -12,5 +12,5 @@ $(document).on("turbolinks:load", function() {
 
   setTimeout(function(){
     $('.flash-messages').slideUp(500);
-  }, 2000);
+  }, 3000);
 });
