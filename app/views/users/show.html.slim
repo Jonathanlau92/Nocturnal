@@ -8,19 +8,15 @@
     .col
       | NAME
       br
-      .bold = @user.username
-    .col
-      | AGE
-      br
-      .bold = @user.age
+      .bold = @user.username.capitalize
     .col
       | COUNTRY
       br
-      .bold = @user.country
+      .bold = @user.country.capitalize
     .col
       | POSITION
       br
-      .bold = @user.position
+      .bold = @user.position.humanize
     .col
       | WINNINGS
       br
