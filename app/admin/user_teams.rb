@@ -16,10 +16,11 @@ ActiveAdmin.register UserTeam do
   # end
   form do |f|
     f.inputs "Team Details" do
-      f.input :user_id, as: :select, collection: User.all.map(&:email).uniq
-      f.input :team_id, as: :select, collection: Team.all.map(&:name).uniq
+      f.input :user_id, as: :select, collection: User.all.map{|u| [u.email, u.id]}.uniq
+      f.input :team_id, as: :select, collection: Team.all.map{|team| [team.name, team.id]}.uniq
       f.input :captain
     end
+    f.actions
   end
   
 end

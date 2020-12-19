@@ -1,6 +1,6 @@
 .container-fluid#login-background
   .row.align-items-center.justify-content-left.h-100
-    .col-sm-3.p-3.form-wrapper.my-5
+    .col-sm-3.p-3.form-wrapper
       .text-center = image_pack_tag 'media/src/images/Logo.png', class: "nocturnal-devise-logo"
       p.text-center.devise-font-size.m-0 Welcome to NOCTURNAL
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -16,10 +16,6 @@
           = link_to "Forgot your password?", new_password_path(resource_name), class: 'float-right devise-font-size text-white'
         .actions.mt-5
           = f.submit "SIGN IN", class: 'col-sm-12 mt-3 btn btn-warning rounded-pill'
-        .separator or
-        = link_to user_steam_omniauth_authorize_path, class: 'col-sm-12 mt-3 btn btn-secondary rounded-pill' do
-          = fa_icon 'steam', type: :fab, class: 'logo-size'
-          span.ml-3 Login with steam
         p.text-muted.text-center.mt-3
           | 'Beep, boop, beep!' - IO
         br

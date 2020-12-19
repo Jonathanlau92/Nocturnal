@@ -40,16 +40,19 @@
   overflow: visible;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
+  min-height: 1000px;
 }
 
 #login-background {
   background-image: url('../src/images/Sign in');
-  background-position: center;
   overflow: visible;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 100vh;
+  min-height: 700px;
+  padding: 5%;
 }
 
 

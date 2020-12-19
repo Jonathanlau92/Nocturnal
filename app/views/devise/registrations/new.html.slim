@@ -21,7 +21,7 @@
         .field
           = f.label :country, 'COUNTRY',  class: 'm-0 devise-font-size'
           br/
-          = f.text_field :country, class: 'text-white form-control col-sm-12'
+          = f.select :country, User.countries.map { |key, value| [key.titleize, key] }, {include_blank: true}, class: 'form-control col-sm-12' 
         .field.mt-3
           = f.label :password, 'PASSWORD', class: 'm-0 devise-font-size'
           = f.password_field :password, autocomplete: "new-password", class: 'text-white form-control col-sm-12'

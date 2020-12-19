@@ -19,7 +19,7 @@ module Stripe
       # If stripe data is empty, initialize it
       puts "HANDLE CHECKOUT SUCCESS"
       @current_user.purchase
-      
+      @current_user.save
     end
   end
 end

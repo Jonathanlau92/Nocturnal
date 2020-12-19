@@ -3,7 +3,7 @@
     .row.mb-5
       .col-md-12.text-center
         = image_pack_tag 'media/src/images/League-Logo.png', class: "league-logo"
-#league-bg.d-flex
+.league-bg.d-flex
   .container
     .row.mt-5
       .col-md-12.text-center
@@ -22,7 +22,7 @@
         p some pic
       .col-md-6.text-center
         p.league-yellow.font-weight-bold MODERATOR
-        span Your lobby moderator, ______, will be present on both Steam and Discord throughout the league. The moderator acts as a judge and controls any misalignments during the league period. Upon commencement of the league, 
+        span = "Your lobby moderator, #{@league.moderator}, will be present on both Steam and Discord throughout the league. The moderator acts as a judge and controls any misalignments during the league period. Upon commencement of the league," 
         span.underline ONLY
         '
         span the 

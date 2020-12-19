@@ -5,9 +5,14 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.py-0.main-h
         = image_pack_tag 'media/src/images/Logo.png', class: "logo-size"
     li.nav-item.hover-yellow.mx-3
       = link_to "Home", root_path, class: "nav-link py-3"
-    li.nav-item.hover-yellow.mx-3
-
-      = link_to "Leagues", leagues_path, class: "nav-link py-3"
+    - if current_page?(root_path)
+      li.nav-item.hover-yellow.mx-3
+        = link_to "DOTA 2", '#dota-2', class: "nav-link py-3"
+      li.nav-item.hover-yellow.mx-3
+        = link_to "Requirements", '#league-requirements', class: "nav-link py-3"
+    - if user_signed_in?
+      li.nav-item.hover-yellow.mx-3
+        = link_to "Leagues", leagues_path, class: "nav-link py-3"
     li.nav-item.dropdown.hover-yellow.mx-3
       a.nav-link.py-3 href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
         | More &darr;
@@ -24,17 +29,19 @@ nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark.nav-width.py-0.main-h
       li.nav-item.dropdown.my-auto
         a.nav-link.profile-logo href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
           - if current_user.steam_authentication_data.present?
-            span.mr-2 = current_user.steam_authentication_data['nickname']
-            span = image_tag(current_user.steam_authentication_data['image'], class: 'profile-circle')
+            span.mr-2.user-profile-yellow = current_user.steam_authentication_data['nickname']
+            = image_tag(current_user.steam_authentication_data['image'], class: 'profile-circle')
           - else
-            span.mr-2 = current_user.username
+            span.mr-2.user-profile-yellow = current_user.username
         .dropdown-menu.bg-dark
           .dropdown-item.bg-dark
             = link_to "Profile", user_path(current_user), class: "nav-link"
           .dropdown-item.bg-dark
+            = link_to "Edit profile", edit_user_path(current_user), class: "nav-link"
+          .dropdown-item.bg-dark
             = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"
     - else
       li.nav-item
-        = link_to "Sign In", new_user_session_path, class: "nav-link"
+        = link_to "Sign In", new_user_session_path, class: "nav-link py-3"
       li.nav-item
-        = link_to "Sign Up", new_user_registration_path, class: "nav-link"
+        = link_to "Sign Up", new_user_registration_path, class: "nav-link py-3"

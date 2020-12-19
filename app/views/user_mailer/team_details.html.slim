@@ -1,0 +1,15 @@
+p
+  | Dear 
+  span = @user.username
+  |,
+p Welcome to your new team:
+ul
+  li
+    = @user.username + " (you)"
+  - @members.each do |member|
+    li
+      = member.username
+p Use our Discord channel for team chat. Discuss strategies and gameplay on your dedicated text and voice channel.
+p Don’t forget to nominate your team captain to change your team name.
+p Nocturnal Team
+

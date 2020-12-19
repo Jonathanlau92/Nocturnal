@@ -8,4 +8,5 @@ nav.navbar.navbar-expand-lg.subheader.navbar-dark.w-100.py-0
       li.nav-item.shadow-yellow.mx-5
         = link_to "PARTICIPANTS", participants_path, class: "nav-link font-weight-bold"
       li.nav-item.shadow-yellow.mx-5
-        = link_to "TEAM DETAILS", team_details_path, class: "nav-link font-weight-bold"
+        - if current_user.purchased_pass?
+          = link_to "TEAM DETAILS", team_path(current_user.teams[0]), class: "nav-link font-weight-bold #{current_user.check_league_date(League.where(current_league: true).last) ? "disabled": ""}" if current_user.teams.present?
